@@ -1,0 +1,195 @@
+<link rel="stylesheet" href="./styles.css"> 
+<link rel="stylesheet" href="./mobile.css">                                                                                               <style> 
+footer {
+    background: url(/img/heder_4\ 1.png);
+   opacity: 0.99;
+   background-image: linear-gradient(to right, #372251, #000000);
+   color:#fff;
+}
+</style>
+                                                                                                 <footer> <br><br>
+		<div class="wrapper">
+			<div class="leftblock">
+				<a href="/c/index?page=main">
+					<img class="logo1" src="https://radinet.net/img/radinet_logo-hor.png" alt="logo">
+				</a>
+				<p> B2B MESSAGING REDEFINED <br />
+					<br />
+					</p>
+				<p style="color: #00BFFF;">All Rights Reserved © 2023 Company RADINET Ltd</p>
+			</div>
+			<div class="rightblock">
+                                Platform
+				<a href="/c/index?page=main">Main Page</a>
+				<a href="/c/index?page=radinet_api">Radinet API</a>
+				<a href="/c/index?page=radinet_plus">Radinet PLUS</a>
+                                <a href="/c/index?page=marketing_messages">Deliver Messaging</a>
+				<a href="/c/index?page=FAQ">FAQ</a>
+				<a href="/c/index?page=blog">Blog</a>
+                                <a href="/c/index?page=developer_sign">Developers</a>
+				<a href="/c/index?page=login">login</a>
+				
+                                </div>
+
+
+                       <div class="rightblock">
+                                Technical
+				<a href="/c/index?page=sign_up">Sign Up</a>
+				<a href="/c/index?page=marketing_messages">Marketing messages</a>
+				<a href="/c/index?page=radinet_plus">On board</a>
+				<a href="/c/index?page=marketing_roi">Marketing ROI </a>
+				<a href="/c/index?page=page3">API capability</a>
+                                <a href="/c/index?page=developer_sign">Developers Sign-UP</a>
+				<a href="https://github.com/RADINETLTD/RADINET_API">GITHUB</a>
+				<a href="/c/index?page=FAQ">API Documentation</a>
+                               </div>
+
+
+
+
+                             <div class="rightblock">
+                                 Company
+				<a href="/c/index?page=career">Careers</a>
+				<a href="/c/index?page=career">Open positions</a>
+				<a href="/c/index?page=press">Press</a>
+				<a href="/c/index?page=about">About Us</a>
+				<a href="/c/index?page=contact">Contact</a>
+                                <a href="/c/index?page=developer_sign">Developers Sign-UP</a>
+				<a href="/c/index?page=policy">Privacy Policy</a>
+				<a href="/c/index?page=terms">Terms & Conditions</a>
+                               </div>
+
+                               <div class="rightblock">
+                                Contact 
+				<a href="/c/index?page=sitemap">Site Map</a>
+				<a href="https://twitter.com/radinet777">Twitter X</a>
+				<a href="https://www.linkedin.com/company/RADINET">linkedin</a>
+				<a href="https://www.facebook.com/radinet777">facebook</a>
+				<a href="/c/index?page=contact">Contact</a>
+                                <a href="mailto:sales@radinet.net?subject=Subject%20Line&body=Content%20of%20the%20email.">Sales email</a>
+				<a href="mailto:Support@radinet.net?subject=Subject%20Line&body=Content%20of%20the%20email.">Support email</a>
+				<a href="mailto:info@radinet.net?subject=Subject%20Line&body=Content%20of%20the%20email.">Info email</a>
+                               </div>
+
+
+				<div class="social" style="display: none;">
+					<a href="https://www.facebook.com/"><img src="/img/icons/facebook.png" alt=""></a>
+					<a href="https://www.linkedin.com/company/RADINET"><img src="/img/icons/linkedin.png" alt=""></a>
+				</div>
+			</div>
+
+		<div> <br><br><br> </div>	
+				<div class="social">  
+					<a href="#"><img src="/img/icons/telegram_icon.png" alt=""></a>
+					<a href="https://twitter.com/radinet777" class="social"><img src="/img/icons/mail_icon.png" alt=""></a>
+					<a href="https://www.linkedin.com/" class="social"><img src="/img/icons/linkedin_icon.png" alt=""></a>
+                                       <a class="button" href="/c/index?page=sign_up"><span>Create Your Account</span><img src="/img/icons/arow_white.svg"></a>
+			</div> 
+		</div>
+         <div> <br><br><br> </div>
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://adavice.github.io/radinet_new/js/script.js"></script>
+	<script src="https://adavice.github.io/radinet_new/js/popup.js"></script>
+	<script src="https://adavice.github.io/radinet_new/js/mob_menu.js"></script>
+	<script>
+		$('#form2').on('submit', function () {
+			var formData = {
+				'name': $('#name').val(),
+				'email': $('#email').val(),
+				'phone': $('#phone').val(),
+				'company': $('#company').val(),
+				'interested': $('#interested').val(),
+				'message': $('#message').val(),
+			};
+			$('#form2').prop('disabled', true);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({ 'event': 'send_form_talk_to_us' });
+			$.ajax({
+				type: 'POST',
+				url: '/c/contact_form',
+				data: formData,
+				encode: true,
+				success: function (data) {
+					window.location.replace("/submitted.html");
+				},
+				error: function (XMLHttpRequest, textStatus, errorThrown) {
+					alert("Something is wrong.");
+				}
+			});
+			return false;
+		});
+
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	<script>
+		$(function () {
+			var swiper = new Swiper(".carousel-gallery .swiper-container", {
+				effect: "slide",
+				speed: 900,
+				slidesPerView: 5,
+				spaceBetween: 20,
+				simulateTouch: true,
+				autoplay: {
+					delay: 5000,
+					stopOnLastSlide: false,
+					disableOnInteraction: false
+				},
+				pagination: {
+					el: ".carousel-gallery .swiper-pagination",
+					clickable: true
+				},
+				breakpoints: {
+					// when window width is <= 320px
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 5
+					},
+					// when window width is <= 480px
+					425: {
+						slidesPerView: 2,
+						spaceBetween: 10
+					},
+					// when window width is <= 640px
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 20
+					}
+				}
+			}); /*http://idangero.us/swiper/api/*/
+		});
+
+	</script>
+
+
+
+
+
+<!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143834685.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DLYEWCTY0M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DLYEWCTY0M');
+</script>
+   
+
+
+</body>
+
+</html>
+								
+             
+             
+             	
+				
+             																																																																																																				          

@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="./styles.css"> 
+<link rel="stylesheet" href="./mobile.css">                                                                                                                                                                                                                
+
+</div></div> <div> <br><br><br><br>  </div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Marketing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white; /* White text for better visibility */
+            background-image: linear-gradient(to right, #372251, #000000); /* Dark blue background */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Integration Guide</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FAFAFA;
+    /* color: #333333; */
+    line-height: 1.6;
+    margin: 0;
+    /* padding: 20px; */
+  }
+
+  
+ pre {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-top: 10px;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #D6336C;
+    background-color: #f8f8f8;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+  }
+</style>
+
+  
+
+    <section class="content">
+        <div class="grid-container">
+            <div class="grid-container-column image-container">
+            </div>
+            <div class="grid-container-column text-container">
+
+           
+
+<h2>1. Understand Your API</h2>
+<h3>Research the API</h3>
+<p>Read the API documentation thoroughly. Understand rate limits, data formats (JSON, XML), and the endpoint structure. Identify the relevant endpoints for your needs.</p>
+<h3>Authentication</h3>
+<p>Common methods: API keys, OAuth, Basic Auth. Ensure you understand the security implications and best practices.</p>
+
+<h2>2. Plan Your Integration</h2>
+<h3>Define Your Requirements</h3>
+<p>Clearly outline what you need to achieve with the API (e.g., fetching data, posting data).</p>
+<h3>Data Mapping</h3>
+<p>Determine how API data fields correspond to your system's fields.</p>
+
+<h2>3. Set Up Your Development Environment</h2>
+<h3>Tools and Libraries</h3>
+<p>Choose a programming language (e.g., Python, JavaScript). Select libraries (e.g., requests in Python, axios in JavaScript).</p>
+<h3>API Client Example</h3>
+<pre><code>
+import requests
+
+response = requests.get('https://api.example.com/data')
+if response.status_code == 200:
+    data = response.json()
+</code></pre>
+
+<h2>4. Authentication Setup</h2>
+<h3>Obtain API Keys</h3>
+<p>Sign up for the API service and generate keys or tokens.</p>
+<h3>Handle Authentication</h3>
+<p>Code to include API key in requests.</p>
+<pre><code>
+headers = {'Authorization': 'Bearer YOUR_API_KEY'}
+response = requests.get('https://api.example.com/data', headers=headers)
+</code></pre>
+
+<h2>5. Implement API Calls</h2>
+<h3>Testing Endpoints</h3>
+<p>Start with GET requests to test connectivity.</p>
+<h3>Handle Data</h3>
+<p>Process response data, handle JSON/XML.</p>
+<pre><code>
+data = response.json()
+print(data)
+</code></pre>
+<h3>Error Handling</h3>
+<pre><code>
+if response.status_code != 200:
+    print("Error:", response.status_code, response.text)
+</code></pre>
+
+<h2>6. Testing and Validation</h2>
+<h3>Unit Testing</h3>
+<p>Write tests to automatically test API integration. Example using Python's unittest framework.</p>
+<h3>Data Validation</h3>
+<p>Validate incoming data formats and values.</p>
+
+<h2>7. Deployment and Monitoring</h2>
+<h3>Deployment</h3>
+<p>Integrate API calls into the main application.</p>
+<h3>Monitoring</h3>
+<p>Use logging and monitoring tools to track API usage and errors.</p>
+
+<h2>8. Maintenance</h2>
+<h3>Stay Updated</h3>
+<p>Subscribe to API updates or changelogs.</p>
+<h3>Review and Update</h3>
+<p>Regularly audit and update your integration.</p>
+
+<h2>9. Documentation</h2>
+<h3>Internal Documentation</h3>
+<p>Document the integration process and configuration details.</p>
+<h3>User Documentation</h3>
+<p>Provide clear instructions for end-users.</p>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+<br><br><br><br> <br><br>
+
+
+
+																																																																																          

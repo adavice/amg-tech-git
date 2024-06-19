@@ -1,0 +1,887 @@
+<link rel="stylesheet" href="./styles.css"> 
+<link rel="stylesheet" href="./mobile.css">
+                  <br><br><br><br><br>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white; /* White text for better visibility */
+            background-image: linear-gradient(to right, #372251, #000000); /* Dark blue background */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    color: #fff;
+}
+
+.highlight {
+    color: #25D366; /* WhatsApp green color */
+}
+
+.buttons button {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #1f9d54; /* Darker green for hover effect */
+}
+
+.code-snippet {
+    background-color: #f4f4f4;
+    border-left: 5px solid #25D366; /* WhatsApp green color */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+pre {
+    overflow: auto;
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;  
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+element.style {
+}
+@media (min-width: 48em)
+.section-wrapper[class*=bg-] {
+    --section-spacing: var(--spacing-size-7);
+}
+.section-wrapper[class*=bg-] {
+    --section-spacing: var(--spacing-size-5);
+    margin-block: 0;
+    padding-block: var(--section-spacing);
+    padding-bottom: var(--section-padding-bottom,var(--section-spacing));
+    padding-top: var(--section-padding-top,var(--section-spacing));
+}
+.section-wrapper.default {
+    --max-width: 120rem;
+}
+@media (min-width: 48em)
+.section-wrapper {
+    --section-spacing: var(--spacing-size-9);
+}
+.section-wrapper {
+    --section-spacing: var(--spacing-size-7);
+    margin-block: var(--section-spacing);
+    margin-bottom: var(--section-margin-bottom,var(--section-spacing));
+    margin-top: var(--section-margin-top,var(--section-spacing));
+}
+.bg-color-ink-100 {
+    background-color: rgb(var(--color-ink-100));
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+}
+body {
+    -webkit-box-shadow: rgb(var(--color-gray-100)/15%) 0 1rem 3.75rem;
+    box-shadow: rgb(var(--color-gray-100)/15%) 0 1rem 3.75rem;
+    font-size: var(--font-copy-default,1.6rem);
+    font-weight: var(--font-weight-book);
+    margin: 0 auto;
+    max-width: 160rem;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+:root {
+    --sa-uid: '0-ebfd44a7-c83d-5697-69b5-c599504689d8';
+}
+:root {
+    --swiper-navigation-size: 44px;
+}
+:root {
+    --swiper-theme-color: #007aff;
+}
+:root {
+    --error-factor: 0.1rem;
+    --top-nav-height: 3.4rem;
+    --bottom-nav-height: 8rem;
+    --subnav-height: 0rem;
+    --nav-height: calc(var(--top-nav-height) + var(--bottom-nav-height));
+    --header-height: calc(var(--nav-height) + var(--subnav-height) - var(--error-factor));
+}
+:root {
+    --font-family-text: Whitney SSm A,Whitney SSm B,helvetica,arial,sans-serif;
+    --font-family-mono: Twilio Sans Mono,monospace;
+    --font-family-display: Whitney Cond SSm A,Whitney Cond SSm B,helvetica,arial,sans-serif;
+    --font-family-surveyor: Surveyor SSm A,Surveyor SSm B;
+    --font-family-default: var(--font-family-text);
+    --font-weight-regular: 300;
+    --font-weight-book: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 900;
+    --font-weight-titles: var(--font-weight-book);
+    --font-size-00: 1rem;
+    --font-size-10: 1.2rem;
+    --font-size-20: 1.4rem;
+    --font-size-25: 1.5rem;
+    --font-size-30: 1.6rem;
+    --font-size-40: 1.8rem;
+    --font-size-50: 2rem;
+    --font-size-55: 2.2rem;
+    --font-size-60: 2.4rem;
+    --font-size-65: 2.6rem;
+    --font-size-68: 2.8rem;
+    --font-size-70: 3.2rem;
+    --font-size-75: 3.4rem;
+    --font-size-78: 3.6rem;
+    --font-size-80: 4rem;
+    --font-size-85: 4.4rem;
+    --font-size-90: 4.8rem;
+    --font-size-100: 5.6rem;
+    --font-size-120: 6.4rem;
+    --font-copy-extra-small: var(--font-size-10);
+    --font-copy-small: var(--font-size-10);
+    --font-copy-medium: var(--font-size-20);
+    --font-copy-large: var(--font-size-30);
+    --font-copy-extra-large: var(--font-size-40);
+    --font-copy-xxl: var(--font-size-60);
+    --font-copy-default: var(--font-copy-medium);
+    --font-title-super-text: var(--font-size-30);
+    --font-title-xxs: var(--font-size-40);
+    --font-title-extra-small: var(--font-size-40);
+    --font-title-small: var(--font-size-60);
+    --font-title-medium: var(--font-size-68);
+    --font-title-large: var(--font-size-75);
+    --font-title-extra-large: var(--font-size-75);
+    --line-height-extra-extra-small: 1.1;
+    --line-height-extra-smaller-small: 1.15;
+    --line-height-extra-small: 1.25;
+    --line-height-small: 1.3;
+    --line-height-medium: 1.5;
+Show All Properties (88 more)
+}
+injected stylesheet
+:host, :root {
+    --rem: 16;
+}
+html {
+    -ms-overflow-style: scrollbar;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgb(var(--color-black)/0);
+    color: rgb(var(--color-default));
+    font-family: var(--font-family-default);
+    font-size: 62.5%;
+    line-height: var(--line-height-body);
+    scroll-behavior: smooth;
+    scroll-padding-block-start: var(--header-height);
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+</style>
+
+
+
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Send your first <span class="highlight">WhatsApp</span> message in a matter of minutes</h1>
+        <p>Sign up for a free Twilio account and grab one of our seven official server-side SDKs to get started. Send your first text message, phone call, or email in minutes and when you’re ready to launch your app, upgrade to a pay-as-you-go plan.</p>
+        <div class="buttons">
+            <button>View the docs</button>
+            <button>Sign up</button>
+        </div>
+    </div>
+    <div class="code-snippet">
+        <pre>
+            <code>message = client.messages.create(
+    body='Hi there',
+    from_=' +15017122661',
+    to=' +15558675310'
+)
+
+print(message.sid)</code>
+        </pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section class="section-wrapper bg-color-ink-100 default" id="new-home-devs">
+    <div class="section-content ">
+
+
+
+
+
+
+
+    
+        
+
+
+
+
+    
+    <div id="" class="grid-container default medium-gap light-text" style="">
+
+
+    
+    <div class="grid-container-column">
+
+    
+    
+    
+
+
+
+
+    
+        
+        
+        
+            
+            
+
+
+
+
+    
+    <div id="" class="grid-container two-columns default medium-gap" style="">
+
+
+    
+    <div class="grid-container-column v-center">
+
+    
+    
+    
+
+
+
+
+    
+        
+        
+        
+            
+            
+
+
+
+
+
+    <div class="richtext " data-ext-icon="<svg viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon--decorative" role="presentation">
+    <title>An icon of a outbound link arrow</title>
+    <path class="icon-stroke" d="M75.3037 3.98207L3 75.5935M75.3037 3.98207L76.0435 43.3021M75.3037 3.98207L35.951 3.59351" stroke="#F22F46" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+">
+        <h2>Send your first</h2>
+<h2 class="rolling-text"><div class="animated fadeOutDown" style="display: inline-block; color: rgb(242, 190, 90);">text message</div></h2><div style="width: 175px; border-top: 3px dotted white; transition: width 200ms ease 0s;"></div>
+<h2>in a matter of minutes</h2>
+<p><span class="copy-medium">Sign up for a free Twilio account and grab one of our seven official server-side SDKs to get started. Send your first text message, phone call, or email in minutes and when you’re ready to launch your app, upgrade to a pay-as-you-go plan.</span></p>
+
+    </div>
+
+
+
+
+        
+    
+        
+        
+        
+            
+            
+
+
+
+
+
+
+
+    
+    
+    <div data-uuid="1593932994" class="button-container horizontal medium left inverse">
+
+        <a class="button button-primary right" href="https://www.twilio.com/docs" target="_self" aria-label="View the docs">
+            <span class="button-text">
+                
+                View the docs
+                
+                    
+                
+                
+            </span>
+        </a>
+    
+
+        <a class="button button-secondary right" href="https://www.twilio.com/try-twilio" target="_self" aria-label="Sign up">
+            <span class="button-text">
+                
+                Sign up
+                
+                    
+                
+                
+            </span>
+        </a>
+    </div>
+
+
+
+        
+    
+
+    
+    </div>
+
+    
+
+    
+    <div class="grid-container-column v-center">
+
+    
+    
+    
+
+
+
+
+    
+        
+        
+        
+            
+            
+
+
+<div class="code-snippet">
+	
+	<nav role="tablist" class="code-snippet-tabs" aria-multiselectable="false">
+		<button type="button" role="tab" id="code-tab--1152794479" class="code-snippet-button" aria-controls="code-tabpanel--1152794479" aria-selected="true" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Python logo</title>  
+  <g class="code_python">
+    <path fill-rule="evenodd" d="M29.94 35.183h12.045c3.354 0 5.995-2.806 5.995-6.137V17.688c0-3.233-2.74-5.662-6.013-6.2A37.86 37.86 0 0 0 35.693 11a34.15 34.15 0 0 0-5.703.487c-5.104.891-5.97 2.758-5.97 6.2v4.42H36v1.635H19.383c-3.505 0-6.574 2.087-7.534 6.052-1.107 4.543-1.156 7.321 0 12.065.857 3.532 2.904 5.99 6.41 5.99h4.108v-5.331c0-3.938 3.482-7.335 7.573-7.335Zm-.76-15.98a2.263 2.263 0 0 1-2.263-2.266 2.272 2.272 0 0 1 2.263-2.28 2.276 2.276 0 0 1 2.264 2.28 2.267 2.267 0 0 1-2.264 2.266Zm30.896 10.59c-.867-3.451-2.521-6.051-6.03-6.051h-4.414v5.304c0 4.106-3.633 7.362-7.647 7.362H29.94c-3.3 0-5.92 2.994-5.92 6.263v11.358c0 3.232 2.786 5.134 5.974 6.062 3.818 1.11 7.434 1.31 12.001 0 3.036-.87 5.985-2.62 5.985-6.062v-4.546H36V47.85h18.045c3.505 0 4.812-2.36 6.031-5.99 1.259-3.736 1.205-7.273 0-12.065ZM42.744 52.515a2.263 2.263 0 0 1 2.264 2.267 2.272 2.272 0 0 1-2.264 2.28 2.275 2.275 0 0 1-2.263-2.28 2.266 2.266 0 0 1 2.263-2.267Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794478" class="code-snippet-button" aria-controls="code-tabpanel--1152794478" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>C# logo</title>
+    <g class="code_c-sharp">
+    <path fill-rule="evenodd" d="m59.099 22.664.128-.088c-.257-.48-.643-.916-1.029-1.135L37.486 9.306C37.143 9.087 36.67 9 36.156 9c-.514 0-.986.131-1.329.306L14.244 21.485c-.73.437-1.244 1.528-1.244 2.357v24.316c0 .48.086 1.004.386 1.484l-.086.043c.215.35.515.655.815.83l20.67 12.18c.342.218.814.305 1.329.305.514 0 .986-.131 1.329-.306l20.584-12.179c.729-.437 1.243-1.528 1.243-2.357v-24.36c.043-.348 0-.741-.171-1.134ZM36.157 53.22c-9.349 0-16.939-7.726-16.939-17.243 0-9.516 7.59-17.243 16.939-17.243 6.303 0 11.792 3.536 14.708 8.73L45.29 30.74c-1.8-3.274-5.231-5.457-9.133-5.457-5.79 0-10.507 4.802-10.507 10.695 0 5.893 4.717 10.695 10.507 10.695 3.902 0 7.333-2.182 9.134-5.413l5.531 3.318c-2.916 5.151-8.405 8.643-14.665 8.643Zm21.87-18.116h-1.373l-.386 1.746h1.759v2.183h-2.145l-.514 2.62h-2.101l.514-2.62h-1.63l-.514 2.62H49.58l.514-2.62h-1.072V36.85h1.501l.386-1.746h-1.887v-2.183h2.273l.515-2.619h2.1l-.514 2.62h1.63l.514-2.62h2.059l-.515 2.62h.944v2.182Zm-5.446 1.746h1.63l.385-1.746h-1.63l-.385 1.746Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794477" class="code-snippet-button" aria-controls="code-tabpanel--1152794477" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>PHP logo</title>  
+  <g class="code_php">
+    <path fill-rule="evenodd" d="M36 19C17.223 19 2 26.773 2 36.362c0 9.588 15.223 17.361 34 17.361s34-7.773 34-17.361C70 26.773 54.777 19 36 19Zm-8.847 20.744c-.811.765-1.712 1.08-2.705 1.406-.992.326-2.255.258-3.79.258h-3.48l-.965 5.608H12.15l3.626-19.066h7.814c2.35 0 4.065.682 5.143 1.925 1.078 1.243 1.402 3.008.972 5.236a8.553 8.553 0 0 1-.898 2.532 8.468 8.468 0 0 1-1.654 2.101Zm11.86 1.664 1.603-8.086c.183-.946.116-1.65-.2-1.993-.318-.344-.992-.575-2.023-.575H35.17l-2.076 10.654h-4.032l3.626-18.505h4.032l-.964 5.047h3.59c2.26 0 3.82.457 4.677 1.251.857.794 1.114 1.882.772 3.661l-1.687 8.546h-4.095Zm22.405-6.268a8.457 8.457 0 0 1-.898 2.517 8.374 8.374 0 0 1-1.653 2.087c-.812.765-1.713 1.08-2.705 1.406-.992.326-2.255.258-3.79.258h-3.48l-.965 5.608h-4.063L47.49 27.95h7.814c2.351 0 4.066.682 5.143 1.925 1.077 1.243 1.401 3.038.972 5.265Zm-7.654-4.386H50.98l-1.517 7.85h2.472c1.637 0 2.858-.162 3.66-.784s1.342-1.586 1.623-3.04c.27-1.397.147-2.487-.367-3.06-.515-.575-1.544-.966-3.087-.966Zm-31.714 0h-2.783l-1.518 7.85h2.471c1.638 0 2.859-.162 3.66-.784.803-.622 1.344-1.586 1.624-3.04.27-1.397.147-2.487-.367-3.06-.515-.575-1.543-.966-3.087-.966Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794476" class="code-snippet-button" aria-controls="code-tabpanel--1152794476" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Ruby logo</title>
+    <g class="code_ruby">
+    <path fill-rule="evenodd" d="m23.157 53.304 31.707 4.327-10.722-17.846-20.985 13.519Zm34.706-33.407c-.937 1.406-1.876 2.81-2.81 4.218-3.213 4.831-6.426 9.663-9.635 14.497-.179.269-.41.482-.159.897 3.101 5.12 6.178 10.254 9.263 15.383.486.81.978 1.617 1.608 2.395L58 19.937l-.137-.04ZM15.528 35.858c.145.138.507.218.676.135 2.974-1.462 5.968-2.89 8.878-4.473.949-.515 1.678-1.44 2.496-2.189 2.707-2.482 5.41-4.968 8.11-7.455.166-.153.362-.3.46-.494.97-1.895 1.924-3.8 2.912-5.761-1.178-.442-2.294-.875-3.424-1.269-.153-.053-.394.053-.56.145-2.616 1.46-5.28 2.844-7.813 4.437-1.267.797-2.3 1.971-3.421 2.994a463.55 463.55 0 0 0-5.396 4.982 9.29 9.29 0 0 0-1.272 1.49c-1.219 1.774-2.401 3.574-3.638 5.425.691.714 1.32 1.397 1.992 2.033ZM26.4 33.433l-4.47 18.882 21.006-13.531-16.536-5.35Zm29.646-13.476-17.854 2.982 6.06 14.733c3.953-5.94 7.83-11.76 11.794-17.715ZM26.648 32.155l16.207 5.26L36.86 22.82l-10.212 9.335Zm-10.896 7.347L10.08 53.057l10.803-.32-5.131-13.235Zm5.259 10.093.134-.03c1.297-5.391 2.612-10.745 3.937-16.348l-8.667 4.504c1.477 3.838 3.053 7.888 4.596 11.874Zm32.855-30.512c-1.725-.457-3.45-.915-5.176-1.369-2.48-.652-4.963-1.296-7.442-1.954-.31-.082-.534-.136-.716.237-.876 1.795-1.78 3.576-2.67 5.363-.027.056-.021.127-.043.266l16.044-2.43.003-.113ZM43.858 15l14.06 3.888-2.323-6.617L43.88 14.87l-.02.132ZM22.203 54.34c-1.742-.2-3.53-.016-5.296.014-1.45.025-2.901.08-4.352.125a.577.577 0 0 0-.447.196L48.09 58l.024-.16-11.535-1.574c-4.79-.654-9.573-1.373-14.376-1.927Zm-11.886-5.42c1.545-3.584 3.084-7.171 4.636-10.754.155-.36.143-.603-.16-.892-.65-.618-1.253-1.284-1.962-2.021L10 49.218l.105.049c.071-.115.159-.224.212-.347Zm30.462-34.864c2.606-.672 5.25-1.198 7.88-1.784.17-.039.336-.095.503-.143L49.136 12l-11.294 1.52c1.06.462 1.878.808 2.937.535Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794475" class="code-snippet-button" aria-controls="code-tabpanel--1152794475" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Java logo</title>  
+  <g class="code_java">
+    <path fill-rule="evenodd" d="M27.567 52.627c-9.43 2.534 5.738 7.77 17.745 2.821-1.967-.735-3.377-1.584-3.377-1.584-5.355.974-7.838 1.05-12.699.516-4.01-.442-1.669-1.753-1.669-1.753Zm16.307-4.944c-7.096 1.313-11.196 1.271-16.388.756-4.015-.4-1.386-2.271-1.386-2.271-10.386 3.316 5.781 7.079 20.297 2.995-1.543-.523-2.523-1.48-2.523-1.48Zm5.562-28.631S28.44 24.095 38.468 35.21c2.96 3.277-.777 6.224-.777 6.224s7.512-3.73 4.063-8.402c-3.222-4.356-5.693-6.52 7.682-13.981Zm4.912 38.353s1.734 1.375-1.91 2.438c-6.929 2.02-28.845 2.628-34.932.081-2.186-.916 1.916-2.186 3.207-2.454 1.345-.28 2.114-.229 2.114-.229-2.433-1.648-15.73 3.238-6.752 4.64 24.479 3.816 44.622-1.72 38.273-4.476Zm-8.413-14.337c1.177-.772 2.802-1.443 2.802-1.443s-4.63.796-9.243 1.17c-5.648.455-11.706.545-14.747.153-7.199-.926 3.947-3.473 3.947-3.473s-4.33-.282-9.651 2.195c-6.295 2.928 15.57 4.263 26.892 1.398Zm2.756 7.158c-.053.137-.23.291-.23.291 15.366-3.885 9.716-13.697 2.37-11.213-.645.219-.983.729-.983.729s.407-.158 1.315-.34c3.715-.745 9.036 4.782-2.472 10.533ZM35.706 39.368c-2.267-4.929-9.955-9.241.003-16.807C48.126 13.133 41.755 7 41.755 7c2.57 9.74-9.066 12.683-13.266 18.749-2.86 4.133 1.404 8.575 7.217 13.62Zm13.4 24.46c-9.427 1.707-21.055 1.508-27.95.412 0 0 1.412 1.125 8.67 1.575 11.043.68 28.006-.378 28.407-5.405 0 0-.771 1.905-9.126 3.417Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794474" class="code-snippet-button" aria-controls="code-tabpanel--1152794474" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>JavaScript logo</title>
+    <g class="code_javascript">
+    <path fill-rule="evenodd" d="M57.444 21.522 37.907 10.511c-1.231-.681-2.843-.681-4.084 0l-19.69 11.011c-1.27.71-2.133 2.045-2.133 3.472v21.993c0 1.427.882 2.762 2.152 3.476l5.19 2.876c2.491 1.192 3.181 1.192 4.314 1.192 3.689 0 5.604-2.167 5.604-5.947V26.872c0-.307.198-.763-.112-.763h-2.489c-.315 0-.939.456-.939.762v21.713c0 1.675-1.6 3.343-4.515 1.927l-5.365-3.016a.574.574 0 0 1-.3-.508V24.994c0-.207.206-.416.395-.522L35.576 13.48a.685.685 0 0 1 .626 0L55.66 24.47c.186.108.157.31.157.524v21.993c0 .21.04.414-.144.515L36.141 58.501a.589.589 0 0 1-.569 0l-5.009-2.903c-.15-.085-.332-.115-.478-.037-1.392.767-1.65.87-2.956 1.31-.321.108-.796.297.18.829l6.55 3.764c.627.353 1.34.536 2.057.536a4.21 4.21 0 0 0 2.065-.536l19.463-11.001c1.271-.72 1.913-2.049 1.913-3.476V24.994c0-1.427-.642-2.759-1.913-3.472Zm-15.469 21.98c-5.19 0-6.333-1.391-6.714-3.899-.045-.27-.28-.593-.564-.593h-2.536c-.314 0-.566.37-.566.674 0 3.21 1.797 7.1 10.38 7.1 6.213 0 9.776-2.346 9.776-6.497 0-4.117-2.862-5.197-8.888-5.972-6.091-.782-6.71-1.177-6.71-2.564 0-1.143.524-2.667 5.034-2.667 4.03 0 5.515.84 6.126 3.48a.556.556 0 0 0 .55.425h2.546a.59.59 0 0 0 .416-.17.547.547 0 0 0 .148-.42c-.395-4.546-3.502-6.664-9.786-6.664-5.591 0-8.925 2.294-8.925 6.139 0 4.17 3.318 5.323 8.684 5.839 6.42.611 6.919 1.523 6.919 2.75 0 2.131-1.76 3.039-5.89 3.039Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	
+		<button type="button" role="tab" id="code-tab--1152794473" class="code-snippet-button" aria-controls="code-tabpanel--1152794473" aria-selected="false" data-cmp-hook-tabs="tab"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Curl logo</title>
+    <g class="code_curl">
+    <path fill-rule="evenodd" d="M47.718 39.67a1.02 1.02 0 0 1-1.012-1.025 1.02 1.02 0 0 1 1.012-1.027c.559 0 1.012.459 1.012 1.027 0 .567-.453 1.026-1.012 1.026Zm1.736-1.613c-.245-.745-.918-1.292-1.736-1.292-.13 0-.246.05-.37.075-.84.179-1.484.9-1.484 1.805 0 1.038.83 1.88 1.854 1.88 1.023 0 1.854-.842 1.854-1.88 0-.209-.056-.4-.118-.588Zm-1.736-4.954a1.02 1.02 0 0 1-1.012-1.027 1.02 1.02 0 0 1 1.012-1.026c.559 0 1.012.46 1.012 1.026a1.02 1.02 0 0 1-1.012 1.027Zm1.736-1.614c-.245-.746-.918-1.293-1.736-1.293-.13 0-.246.05-.37.076-.84.178-1.484.899-1.484 1.804 0 1.039.83 1.88 1.854 1.88 1.023 0 1.854-.841 1.854-1.88 0-.208-.056-.399-.118-.587Zm12.11-3.583a1.02 1.02 0 0 1-1.012-1.026c0-.568.453-1.027 1.012-1.027.56 0 1.012.46 1.012 1.027a1.02 1.02 0 0 1-1.012 1.026ZM51.51 45.451a1.02 1.02 0 0 1-1.012-1.027 1.02 1.02 0 0 1 1.012-1.027c.56 0 1.012.46 1.012 1.027s-.452 1.027-1.012 1.027ZM61.564 25c-1.024 0-1.853.842-1.853 1.88 0 .221.055.428.125.625L51.142 42.62c-.84.178-1.485.899-1.485 1.804 0 1.038.83 1.88 1.853 1.88 1.024 0 1.853-.842 1.853-1.88 0-.209-.054-.4-.116-.587l8.738-15.164c.814-.198 1.433-.906 1.433-1.793 0-1.038-.831-1.88-1.854-1.88Zm7.583 2.906a1.02 1.02 0 0 1-1.013-1.026 1.02 1.02 0 0 1 1.013-1.027c.559 0 1.012.46 1.012 1.027a1.02 1.02 0 0 1-1.012 1.026ZM59.094 45.451a1.02 1.02 0 0 1-1.013-1.027 1.02 1.02 0 0 1 1.013-1.027c.559 0 1.011.46 1.011 1.027a1.02 1.02 0 0 1-1.01 1.027ZM69.147 25c-1.023 0-1.853.842-1.853 1.88 0 .221.055.428.124.625L58.725 42.62c-.84.178-1.484.899-1.484 1.804 0 1.038.83 1.88 1.853 1.88 1.022 0 1.852-.842 1.852-1.88 0-.209-.055-.4-.116-.587l8.737-15.164c.815-.198 1.433-.906 1.433-1.793 0-1.038-.83-1.88-1.853-1.88ZM1 38.438c0-1.469.27-2.19 1.4-3.137l1.74-1.468c1.103-.919 1.668-.945 3.042-.945h3.73c.784 0 1.62.175 1.62 1.193 0 1.045-.931 1.197-1.62 1.197H6.768c-.47 0-.935.25-1.352.595l-1.422 1.22c-.37.3-.638.55-.638 1.021v2.963c0 .472.268.721.638 1.02l1.422 1.218c.417.349.882.598 1.352.598h4.144c.688 0 1.62.15 1.62 1.197 0 1.019-.836 1.194-1.62 1.194h-3.73c-1.374 0-1.939-.026-3.042-.945L2.4 43.888C1.27 42.943 1 42.222 1 40.753v-2.315Zm41.368 5.475h1.766c.788 0 1.62.175 1.62 1.197 0 1.044-.931 1.194-1.62 1.194H38.15c-.688 0-1.62-.15-1.62-1.194 0-1.022.833-1.197 1.62-1.197h1.865V30.35H38.15c-.688 0-1.62-.148-1.62-1.196 0-1.02.833-1.194 1.62-1.194h2.477c1.349 0 1.741.249 1.741 1.67v14.284Zm-15.85-9.26c0-.869.1-1.765 1.177-1.765.934 0 1.18.796 1.18 1.591v.974l1.84-1.546c.662-.547 1.348-1.02 2.084-1.02h1.891c.909 0 1.667.299 2.305.946.784.798 1.055 1.62 1.055 2.713 0 .822-.147 1.669-1.153 1.669-.859 0-1.203-.699-1.203-1.469 0-.397 0-.698-.245-1.044-.293-.424-.858-.424-1.422-.424h-.688c-.441 0-.76.223-1.177.572l-3.288 2.763v6.047c0 .822-.172 1.644-1.18 1.644-1.003 0-1.176-.822-1.176-1.644V34.654Zm-1.25 9.885c0 .546.1 1.766-1.154 1.766-1.004 0-1.176-.848-1.176-1.67v-.397l-1.913 1.27c-.762.499-1.4.797-2.037.797h-1.741c-.664 0-1.4-.202-2.184-.87-1.056-.922-1.034-1.944-1.08-3.238l-.246-7.517c-.026-.869.098-1.791 1.177-1.791 1.006 0 1.128.87 1.153 1.643l.246 7.342c.025.546.047 1.196.245 1.542.198.35.81.498 1.374.498h.785c.27 0 .516-.074.736-.223l3.46-2.215V34.53c0-.821.171-1.643 1.179-1.643 1.004 0 1.176.822 1.176 1.643v10.007Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+</button>
+	</nav>
+	<div class="code-snippet-slides">
+		<div id="code-tabpanel--1152794479" role="tabpanel" aria-labelledby="code-tab--1152794479" class="code-snippet-panel selected-panel">
+				<div class="code-toolbar"><pre class="language-python" tabindex="0"><code class="language-python"><span class="token comment"># Download the helper library from https://www.twilio.com/docs/python/install</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> twilio<span class="token punctuation">.</span>rest <span class="token keyword">import</span> Client
+
+<span class="token comment"># Find your Account SID and Auth Token at twilio.com/console</span>
+<span class="token comment"># and set the environment variables. See http://twil.io/secure</span>
+account_sid <span class="token operator">=</span> os<span class="token punctuation">.</span>environ<span class="token punctuation">[</span><span class="token string">'TWILIO_ACCOUNT_SID'</span><span class="token punctuation">]</span>
+auth_token <span class="token operator">=</span> os<span class="token punctuation">.</span>environ<span class="token punctuation">[</span><span class="token string">'TWILIO_AUTH_TOKEN'</span><span class="token punctuation">]</span>
+client <span class="token operator">=</span> Client<span class="token punctuation">(</span>account_sid<span class="token punctuation">,</span> auth_token<span class="token punctuation">)</span>
+
+message <span class="token operator">=</span> client<span class="token punctuation">.</span>messages<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
+                              body<span class="token operator">=</span><span class="token string">'Hi there'</span><span class="token punctuation">,</span>
+                              from_<span class="token operator">=</span><span class="token string">'+15017122661'</span><span class="token punctuation">,</span>
+                              to<span class="token operator">=</span><span class="token string">'+15558675310'</span>
+                          <span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>sid<span class="token punctuation">)</span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794478" role="tabpanel" aria-labelledby="code-tab--1152794478" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-csharp" tabindex="0"><code class="language-csharp"><span class="token comment">// Install the C# / .NET helper library from twilio.com/docs/csharp/install</span>
+<span class="token keyword">using</span> <span class="token namespace">System</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">Twilio</span><span class="token punctuation">;</span>
+<span class="token keyword">using</span> <span class="token namespace">Twilio<span class="token punctuation">.</span>Rest<span class="token punctuation">.</span>Api<span class="token punctuation">.</span>V2010<span class="token punctuation">.</span>Account</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Program</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// Find your Account SID and Auth Token at twilio.com/console</span>
+        <span class="token comment">// and set the environment variables. See http://twil.io/secure</span>
+        <span class="token class-name"><span class="token keyword">string</span></span> accountSid <span class="token operator">=</span> Environment<span class="token punctuation">.</span><span class="token function">GetEnvironmentVariable</span><span class="token punctuation">(</span><span class="token string">"TWILIO_ACCOUNT_SID"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">string</span></span> authToken <span class="token operator">=</span> Environment<span class="token punctuation">.</span><span class="token function">GetEnvironmentVariable</span><span class="token punctuation">(</span><span class="token string">"TWILIO_AUTH_TOKEN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        TwilioClient<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span>accountSid<span class="token punctuation">,</span> authToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name"><span class="token keyword">var</span></span> message <span class="token operator">=</span> MessageResource<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span>
+            <span class="token named-parameter punctuation">body</span><span class="token punctuation">:</span> <span class="token string">"Hi there"</span><span class="token punctuation">,</span>
+            <span class="token named-parameter punctuation">from</span><span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Twilio<span class="token punctuation">.</span>Types<span class="token punctuation">.</span>PhoneNumber</span><span class="token punctuation">(</span><span class="token string">"+15017122661"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token named-parameter punctuation">to</span><span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Twilio<span class="token punctuation">.</span>Types<span class="token punctuation">.</span>PhoneNumber</span><span class="token punctuation">(</span><span class="token string">"+15558675310"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>Sid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794477" role="tabpanel" aria-labelledby="code-tab--1152794477" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-php" tabindex="0"><code class="language-php"><span class="token php language-php"><span class="token delimiter important"><?php</span>
+
+<span class="token comment">// Update the path below to your autoload.php,</span>
+<span class="token comment">// see https://getcomposer.org/doc/01-basic-usage.md</span>
+<span class="token keyword">require_once</span> <span class="token string single-quoted-string">'/path/to/vendor/autoload.php'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Twilio<span class="token punctuation">\</span>Rest<span class="token punctuation">\</span>Client</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Find your Account SID and Auth Token at twilio.com/console</span>
+<span class="token comment">// and set the environment variables. See http://twil.io/secure</span>
+<span class="token variable">$sid</span> <span class="token operator">=</span> <span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"TWILIO_ACCOUNT_SID"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$token</span> <span class="token operator">=</span> <span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"TWILIO_AUTH_TOKEN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$twilio</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Client</span><span class="token punctuation">(</span><span class="token variable">$sid</span><span class="token punctuation">,</span> <span class="token variable">$token</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$message</span> <span class="token operator">=</span> <span class="token variable">$twilio</span><span class="token operator">-></span><span class="token property">messages</span>
+                  <span class="token operator">-></span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"+15558675310"</span><span class="token punctuation">,</span> <span class="token comment">// to</span>
+                           <span class="token punctuation">[</span><span class="token string double-quoted-string">"body"</span> <span class="token operator">=></span> <span class="token string double-quoted-string">"Hi there"</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"from"</span> <span class="token operator">=></span> <span class="token string double-quoted-string">"+15017122661"</span><span class="token punctuation">]</span>
+                  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token operator">-></span><span class="token property">sid</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794476" role="tabpanel" aria-labelledby="code-tab--1152794476" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-ruby" tabindex="0"><code class="language-ruby"><span class="token comment"># Download the helper library from https://www.twilio.com/docs/ruby/install</span>
+<span class="token keyword">require</span> <span class="token string-literal"><span class="token string">'rubygems'</span></span>
+<span class="token keyword">require</span> <span class="token string-literal"><span class="token string">'twilio-ruby'</span></span>
+
+<span class="token comment"># Find your Account SID and Auth Token at twilio.com/console</span>
+<span class="token comment"># and set the environment variables. See http://twil.io/secure</span>
+account_sid <span class="token operator">=</span> <span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">'TWILIO_ACCOUNT_SID'</span></span><span class="token punctuation">]</span>
+auth_token <span class="token operator">=</span> <span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">'TWILIO_AUTH_TOKEN'</span></span><span class="token punctuation">]</span>
+<span class="token variable">@client</span> <span class="token operator">=</span> Twilio<span class="token double-colon punctuation">::</span><span class="token constant">REST</span><span class="token double-colon punctuation">::</span><span class="token class-name">Client</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>account_sid<span class="token punctuation">,</span> auth_token<span class="token punctuation">)</span>
+
+message <span class="token operator">=</span> <span class="token variable">@client</span><span class="token punctuation">.</span>messages<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
+                             <span class="token symbol">body</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'Hi there'</span></span><span class="token punctuation">,</span>
+                             <span class="token symbol">from</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'+15017122661'</span></span><span class="token punctuation">,</span>
+                             <span class="token symbol">to</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'+15558675310'</span></span>
+                           <span class="token punctuation">)</span>
+
+puts message<span class="token punctuation">.</span>sid</code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794475" role="tabpanel" aria-labelledby="code-tab--1152794475" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-java" tabindex="0"><code class="language-java"><span class="token comment">// Install the Java helper library from twilio.com/docs/java/install</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>twilio<span class="token punctuation">.</span></span><span class="token class-name">Twilio</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>twilio<span class="token punctuation">.</span>rest<span class="token punctuation">.</span>api<span class="token punctuation">.</span>v2010<span class="token punctuation">.</span>account<span class="token punctuation">.</span></span><span class="token class-name">Message</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>twilio<span class="token punctuation">.</span>type<span class="token punctuation">.</span></span><span class="token class-name">PhoneNumber</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Find your Account SID and Auth Token at twilio.com/console</span>
+    <span class="token comment">// and set the environment variables. See http://twil.io/secure</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">ACCOUNT_SID</span> <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string">"TWILIO_ACCOUNT_SID"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">AUTH_TOKEN</span> <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string">"TWILIO_AUTH_TOKEN"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Twilio</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token constant">ACCOUNT_SID</span><span class="token punctuation">,</span> <span class="token constant">AUTH_TOKEN</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Message</span> message <span class="token operator">=</span> <span class="token class-name">Message</span><span class="token punctuation">.</span><span class="token function">creator</span><span class="token punctuation">(</span>
+                <span class="token keyword">new</span> <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>twilio<span class="token punctuation">.</span>type<span class="token punctuation">.</span></span>PhoneNumber</span><span class="token punctuation">(</span><span class="token string">"+15558675310"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name"><span class="token namespace">com<span class="token punctuation">.</span>twilio<span class="token punctuation">.</span>type<span class="token punctuation">.</span></span>PhoneNumber</span><span class="token punctuation">(</span><span class="token string">"+15017122661"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">"Hi there"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span><span class="token function">getSid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794474" role="tabpanel" aria-labelledby="code-tab--1152794474" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-js" tabindex="0"><code class="language-js"><span class="token comment">// Download the helper library from https://www.twilio.com/docs/node/install</span>
+<span class="token comment">// Find your Account SID and Auth Token at twilio.com/console</span>
+<span class="token comment">// and set the environment variables. See http://twil.io/secure</span>
+<span class="token keyword">const</span> accountSid <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">TWILIO_ACCOUNT_SID</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> authToken <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">TWILIO_AUTH_TOKEN</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'twilio'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>accountSid<span class="token punctuation">,</span> authToken<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+client<span class="token punctuation">.</span>messages
+      <span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">'Hi there'</span><span class="token punctuation">,</span> <span class="token literal-property property">from</span><span class="token operator">:</span> <span class="token string">'+15017122661'</span><span class="token punctuation">,</span> <span class="token literal-property property">to</span><span class="token operator">:</span> <span class="token string">'+15558675310'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">message</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>sid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	
+		<div id="code-tabpanel--1152794473" role="tabpanel" aria-labelledby="code-tab--1152794473" class="code-snippet-panel">
+				<div class="code-toolbar"><pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token string">"https://api.twilio.com/2010-04-01/Accounts/<span class="token variable">$TWILIO_ACCOUNT_SID</span>/Messages.json"</span> <span class="token punctuation">\</span>
+--data-urlencode <span class="token string">"Body=Hi there"</span> <span class="token punctuation">\</span>
+--data-urlencode <span class="token string">"From=+15017122661"</span> <span class="token punctuation">\</span>
+--data-urlencode <span class="token string">"To=+15558675310"</span> <span class="token punctuation">\</span>
+<span class="token parameter variable">-u</span> <span class="token variable">$TWILIO_ACCOUNT_SID</span><span class="token builtin class-name">:</span><span class="token variable">$TWILIO_AUTH_TOKEN</span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+		</div>
+	</div>
+</div>
+
+    
+
+
+        
+    
+        
+        
+        
+            
+            
+
+
+<div data-uuid="1494682597" class="logo-list white">
+    
+    
+
+    
+        <div class="logo-list-item">
+            <span aria-label="Python logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Python logo</title>  
+  <g class="code_python">
+    <path fill-rule="evenodd" d="M29.94 35.183h12.045c3.354 0 5.995-2.806 5.995-6.137V17.688c0-3.233-2.74-5.662-6.013-6.2A37.86 37.86 0 0 0 35.693 11a34.15 34.15 0 0 0-5.703.487c-5.104.891-5.97 2.758-5.97 6.2v4.42H36v1.635H19.383c-3.505 0-6.574 2.087-7.534 6.052-1.107 4.543-1.156 7.321 0 12.065.857 3.532 2.904 5.99 6.41 5.99h4.108v-5.331c0-3.938 3.482-7.335 7.573-7.335Zm-.76-15.98a2.263 2.263 0 0 1-2.263-2.266 2.272 2.272 0 0 1 2.263-2.28 2.276 2.276 0 0 1 2.264 2.28 2.267 2.267 0 0 1-2.264 2.266Zm30.896 10.59c-.867-3.451-2.521-6.051-6.03-6.051h-4.414v5.304c0 4.106-3.633 7.362-7.647 7.362H29.94c-3.3 0-5.92 2.994-5.92 6.263v11.358c0 3.232 2.786 5.134 5.974 6.062 3.818 1.11 7.434 1.31 12.001 0 3.036-.87 5.985-2.62 5.985-6.062v-4.546H36V47.85h18.045c3.505 0 4.812-2.36 6.031-5.99 1.259-3.736 1.205-7.273 0-12.065ZM42.744 52.515a2.263 2.263 0 0 1 2.264 2.267 2.272 2.272 0 0 1-2.264 2.28 2.275 2.275 0 0 1-2.263-2.28 2.266 2.266 0 0 1 2.263-2.267Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="C# logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>C# logo</title>
+    <g class="code_c-sharp">
+    <path fill-rule="evenodd" d="m59.099 22.664.128-.088c-.257-.48-.643-.916-1.029-1.135L37.486 9.306C37.143 9.087 36.67 9 36.156 9c-.514 0-.986.131-1.329.306L14.244 21.485c-.73.437-1.244 1.528-1.244 2.357v24.316c0 .48.086 1.004.386 1.484l-.086.043c.215.35.515.655.815.83l20.67 12.18c.342.218.814.305 1.329.305.514 0 .986-.131 1.329-.306l20.584-12.179c.729-.437 1.243-1.528 1.243-2.357v-24.36c.043-.348 0-.741-.171-1.134ZM36.157 53.22c-9.349 0-16.939-7.726-16.939-17.243 0-9.516 7.59-17.243 16.939-17.243 6.303 0 11.792 3.536 14.708 8.73L45.29 30.74c-1.8-3.274-5.231-5.457-9.133-5.457-5.79 0-10.507 4.802-10.507 10.695 0 5.893 4.717 10.695 10.507 10.695 3.902 0 7.333-2.182 9.134-5.413l5.531 3.318c-2.916 5.151-8.405 8.643-14.665 8.643Zm21.87-18.116h-1.373l-.386 1.746h1.759v2.183h-2.145l-.514 2.62h-2.101l.514-2.62h-1.63l-.514 2.62H49.58l.514-2.62h-1.072V36.85h1.501l.386-1.746h-1.887v-2.183h2.273l.515-2.619h2.1l-.514 2.62h1.63l.514-2.62h2.059l-.515 2.62h.944v2.182Zm-5.446 1.746h1.63l.385-1.746h-1.63l-.385 1.746Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="PHP logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>PHP logo</title>  
+  <g class="code_php">
+    <path fill-rule="evenodd" d="M36 19C17.223 19 2 26.773 2 36.362c0 9.588 15.223 17.361 34 17.361s34-7.773 34-17.361C70 26.773 54.777 19 36 19Zm-8.847 20.744c-.811.765-1.712 1.08-2.705 1.406-.992.326-2.255.258-3.79.258h-3.48l-.965 5.608H12.15l3.626-19.066h7.814c2.35 0 4.065.682 5.143 1.925 1.078 1.243 1.402 3.008.972 5.236a8.553 8.553 0 0 1-.898 2.532 8.468 8.468 0 0 1-1.654 2.101Zm11.86 1.664 1.603-8.086c.183-.946.116-1.65-.2-1.993-.318-.344-.992-.575-2.023-.575H35.17l-2.076 10.654h-4.032l3.626-18.505h4.032l-.964 5.047h3.59c2.26 0 3.82.457 4.677 1.251.857.794 1.114 1.882.772 3.661l-1.687 8.546h-4.095Zm22.405-6.268a8.457 8.457 0 0 1-.898 2.517 8.374 8.374 0 0 1-1.653 2.087c-.812.765-1.713 1.08-2.705 1.406-.992.326-2.255.258-3.79.258h-3.48l-.965 5.608h-4.063L47.49 27.95h7.814c2.351 0 4.066.682 5.143 1.925 1.077 1.243 1.401 3.038.972 5.265Zm-7.654-4.386H50.98l-1.517 7.85h2.472c1.637 0 2.858-.162 3.66-.784s1.342-1.586 1.623-3.04c.27-1.397.147-2.487-.367-3.06-.515-.575-1.544-.966-3.087-.966Zm-31.714 0h-2.783l-1.518 7.85h2.471c1.638 0 2.859-.162 3.66-.784.803-.622 1.344-1.586 1.624-3.04.27-1.397.147-2.487-.367-3.06-.515-.575-1.543-.966-3.087-.966Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="Ruby logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Ruby logo</title>
+    <g class="code_ruby">
+    <path fill-rule="evenodd" d="m23.157 53.304 31.707 4.327-10.722-17.846-20.985 13.519Zm34.706-33.407c-.937 1.406-1.876 2.81-2.81 4.218-3.213 4.831-6.426 9.663-9.635 14.497-.179.269-.41.482-.159.897 3.101 5.12 6.178 10.254 9.263 15.383.486.81.978 1.617 1.608 2.395L58 19.937l-.137-.04ZM15.528 35.858c.145.138.507.218.676.135 2.974-1.462 5.968-2.89 8.878-4.473.949-.515 1.678-1.44 2.496-2.189 2.707-2.482 5.41-4.968 8.11-7.455.166-.153.362-.3.46-.494.97-1.895 1.924-3.8 2.912-5.761-1.178-.442-2.294-.875-3.424-1.269-.153-.053-.394.053-.56.145-2.616 1.46-5.28 2.844-7.813 4.437-1.267.797-2.3 1.971-3.421 2.994a463.55 463.55 0 0 0-5.396 4.982 9.29 9.29 0 0 0-1.272 1.49c-1.219 1.774-2.401 3.574-3.638 5.425.691.714 1.32 1.397 1.992 2.033ZM26.4 33.433l-4.47 18.882 21.006-13.531-16.536-5.35Zm29.646-13.476-17.854 2.982 6.06 14.733c3.953-5.94 7.83-11.76 11.794-17.715ZM26.648 32.155l16.207 5.26L36.86 22.82l-10.212 9.335Zm-10.896 7.347L10.08 53.057l10.803-.32-5.131-13.235Zm5.259 10.093.134-.03c1.297-5.391 2.612-10.745 3.937-16.348l-8.667 4.504c1.477 3.838 3.053 7.888 4.596 11.874Zm32.855-30.512c-1.725-.457-3.45-.915-5.176-1.369-2.48-.652-4.963-1.296-7.442-1.954-.31-.082-.534-.136-.716.237-.876 1.795-1.78 3.576-2.67 5.363-.027.056-.021.127-.043.266l16.044-2.43.003-.113ZM43.858 15l14.06 3.888-2.323-6.617L43.88 14.87l-.02.132ZM22.203 54.34c-1.742-.2-3.53-.016-5.296.014-1.45.025-2.901.08-4.352.125a.577.577 0 0 0-.447.196L48.09 58l.024-.16-11.535-1.574c-4.79-.654-9.573-1.373-14.376-1.927Zm-11.886-5.42c1.545-3.584 3.084-7.171 4.636-10.754.155-.36.143-.603-.16-.892-.65-.618-1.253-1.284-1.962-2.021L10 49.218l.105.049c.071-.115.159-.224.212-.347Zm30.462-34.864c2.606-.672 5.25-1.198 7.88-1.784.17-.039.336-.095.503-.143L49.136 12l-11.294 1.52c1.06.462 1.878.808 2.937.535Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="Java logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Java logo</title>  
+  <g class="code_java">
+    <path fill-rule="evenodd" d="M27.567 52.627c-9.43 2.534 5.738 7.77 17.745 2.821-1.967-.735-3.377-1.584-3.377-1.584-5.355.974-7.838 1.05-12.699.516-4.01-.442-1.669-1.753-1.669-1.753Zm16.307-4.944c-7.096 1.313-11.196 1.271-16.388.756-4.015-.4-1.386-2.271-1.386-2.271-10.386 3.316 5.781 7.079 20.297 2.995-1.543-.523-2.523-1.48-2.523-1.48Zm5.562-28.631S28.44 24.095 38.468 35.21c2.96 3.277-.777 6.224-.777 6.224s7.512-3.73 4.063-8.402c-3.222-4.356-5.693-6.52 7.682-13.981Zm4.912 38.353s1.734 1.375-1.91 2.438c-6.929 2.02-28.845 2.628-34.932.081-2.186-.916 1.916-2.186 3.207-2.454 1.345-.28 2.114-.229 2.114-.229-2.433-1.648-15.73 3.238-6.752 4.64 24.479 3.816 44.622-1.72 38.273-4.476Zm-8.413-14.337c1.177-.772 2.802-1.443 2.802-1.443s-4.63.796-9.243 1.17c-5.648.455-11.706.545-14.747.153-7.199-.926 3.947-3.473 3.947-3.473s-4.33-.282-9.651 2.195c-6.295 2.928 15.57 4.263 26.892 1.398Zm2.756 7.158c-.053.137-.23.291-.23.291 15.366-3.885 9.716-13.697 2.37-11.213-.645.219-.983.729-.983.729s.407-.158 1.315-.34c3.715-.745 9.036 4.782-2.472 10.533ZM35.706 39.368c-2.267-4.929-9.955-9.241.003-16.807C48.126 13.133 41.755 7 41.755 7c2.57 9.74-9.066 12.683-13.266 18.749-2.86 4.133 1.404 8.575 7.217 13.62Zm13.4 24.46c-9.427 1.707-21.055 1.508-27.95.412 0 0 1.412 1.125 8.67 1.575 11.043.68 28.006-.378 28.407-5.405 0 0-.771 1.905-9.126 3.417Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="JavaScript logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>JavaScript logo</title>
+    <g class="code_javascript">
+    <path fill-rule="evenodd" d="M57.444 21.522 37.907 10.511c-1.231-.681-2.843-.681-4.084 0l-19.69 11.011c-1.27.71-2.133 2.045-2.133 3.472v21.993c0 1.427.882 2.762 2.152 3.476l5.19 2.876c2.491 1.192 3.181 1.192 4.314 1.192 3.689 0 5.604-2.167 5.604-5.947V26.872c0-.307.198-.763-.112-.763h-2.489c-.315 0-.939.456-.939.762v21.713c0 1.675-1.6 3.343-4.515 1.927l-5.365-3.016a.574.574 0 0 1-.3-.508V24.994c0-.207.206-.416.395-.522L35.576 13.48a.685.685 0 0 1 .626 0L55.66 24.47c.186.108.157.31.157.524v21.993c0 .21.04.414-.144.515L36.141 58.501a.589.589 0 0 1-.569 0l-5.009-2.903c-.15-.085-.332-.115-.478-.037-1.392.767-1.65.87-2.956 1.31-.321.108-.796.297.18.829l6.55 3.764c.627.353 1.34.536 2.057.536a4.21 4.21 0 0 0 2.065-.536l19.463-11.001c1.271-.72 1.913-2.049 1.913-3.476V24.994c0-1.427-.642-2.759-1.913-3.472Zm-15.469 21.98c-5.19 0-6.333-1.391-6.714-3.899-.045-.27-.28-.593-.564-.593h-2.536c-.314 0-.566.37-.566.674 0 3.21 1.797 7.1 10.38 7.1 6.213 0 9.776-2.346 9.776-6.497 0-4.117-2.862-5.197-8.888-5.972-6.091-.782-6.71-1.177-6.71-2.564 0-1.143.524-2.667 5.034-2.667 4.03 0 5.515.84 6.126 3.48a.556.556 0 0 0 .55.425h2.546a.59.59 0 0 0 .416-.17.547.547 0 0 0 .148-.42c-.395-4.546-3.502-6.664-9.786-6.664-5.591 0-8.925 2.294-8.925 6.139 0 4.17 3.318 5.323 8.684 5.839 6.42.611 6.919 1.523 6.919 2.75 0 2.131-1.76 3.039-5.89 3.039Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+        <div class="logo-list-item">
+            <span aria-label="Curl logo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 72 72" class="icon--decorative" role="presentation">
+  <title>Curl logo</title>
+    <g class="code_curl">
+    <path fill-rule="evenodd" d="M47.718 39.67a1.02 1.02 0 0 1-1.012-1.025 1.02 1.02 0 0 1 1.012-1.027c.559 0 1.012.459 1.012 1.027 0 .567-.453 1.026-1.012 1.026Zm1.736-1.613c-.245-.745-.918-1.292-1.736-1.292-.13 0-.246.05-.37.075-.84.179-1.484.9-1.484 1.805 0 1.038.83 1.88 1.854 1.88 1.023 0 1.854-.842 1.854-1.88 0-.209-.056-.4-.118-.588Zm-1.736-4.954a1.02 1.02 0 0 1-1.012-1.027 1.02 1.02 0 0 1 1.012-1.026c.559 0 1.012.46 1.012 1.026a1.02 1.02 0 0 1-1.012 1.027Zm1.736-1.614c-.245-.746-.918-1.293-1.736-1.293-.13 0-.246.05-.37.076-.84.178-1.484.899-1.484 1.804 0 1.039.83 1.88 1.854 1.88 1.023 0 1.854-.841 1.854-1.88 0-.208-.056-.399-.118-.587Zm12.11-3.583a1.02 1.02 0 0 1-1.012-1.026c0-.568.453-1.027 1.012-1.027.56 0 1.012.46 1.012 1.027a1.02 1.02 0 0 1-1.012 1.026ZM51.51 45.451a1.02 1.02 0 0 1-1.012-1.027 1.02 1.02 0 0 1 1.012-1.027c.56 0 1.012.46 1.012 1.027s-.452 1.027-1.012 1.027ZM61.564 25c-1.024 0-1.853.842-1.853 1.88 0 .221.055.428.125.625L51.142 42.62c-.84.178-1.485.899-1.485 1.804 0 1.038.83 1.88 1.853 1.88 1.024 0 1.853-.842 1.853-1.88 0-.209-.054-.4-.116-.587l8.738-15.164c.814-.198 1.433-.906 1.433-1.793 0-1.038-.831-1.88-1.854-1.88Zm7.583 2.906a1.02 1.02 0 0 1-1.013-1.026 1.02 1.02 0 0 1 1.013-1.027c.559 0 1.012.46 1.012 1.027a1.02 1.02 0 0 1-1.012 1.026ZM59.094 45.451a1.02 1.02 0 0 1-1.013-1.027 1.02 1.02 0 0 1 1.013-1.027c.559 0 1.011.46 1.011 1.027a1.02 1.02 0 0 1-1.01 1.027ZM69.147 25c-1.023 0-1.853.842-1.853 1.88 0 .221.055.428.124.625L58.725 42.62c-.84.178-1.484.899-1.484 1.804 0 1.038.83 1.88 1.853 1.88 1.022 0 1.852-.842 1.852-1.88 0-.209-.055-.4-.116-.587l8.737-15.164c.815-.198 1.433-.906 1.433-1.793 0-1.038-.83-1.88-1.853-1.88ZM1 38.438c0-1.469.27-2.19 1.4-3.137l1.74-1.468c1.103-.919 1.668-.945 3.042-.945h3.73c.784 0 1.62.175 1.62 1.193 0 1.045-.931 1.197-1.62 1.197H6.768c-.47 0-.935.25-1.352.595l-1.422 1.22c-.37.3-.638.55-.638 1.021v2.963c0 .472.268.721.638 1.02l1.422 1.218c.417.349.882.598 1.352.598h4.144c.688 0 1.62.15 1.62 1.197 0 1.019-.836 1.194-1.62 1.194h-3.73c-1.374 0-1.939-.026-3.042-.945L2.4 43.888C1.27 42.943 1 42.222 1 40.753v-2.315Zm41.368 5.475h1.766c.788 0 1.62.175 1.62 1.197 0 1.044-.931 1.194-1.62 1.194H38.15c-.688 0-1.62-.15-1.62-1.194 0-1.022.833-1.197 1.62-1.197h1.865V30.35H38.15c-.688 0-1.62-.148-1.62-1.196 0-1.02.833-1.194 1.62-1.194h2.477c1.349 0 1.741.249 1.741 1.67v14.284Zm-15.85-9.26c0-.869.1-1.765 1.177-1.765.934 0 1.18.796 1.18 1.591v.974l1.84-1.546c.662-.547 1.348-1.02 2.084-1.02h1.891c.909 0 1.667.299 2.305.946.784.798 1.055 1.62 1.055 2.713 0 .822-.147 1.669-1.153 1.669-.859 0-1.203-.699-1.203-1.469 0-.397 0-.698-.245-1.044-.293-.424-.858-.424-1.422-.424h-.688c-.441 0-.76.223-1.177.572l-3.288 2.763v6.047c0 .822-.172 1.644-1.18 1.644-1.003 0-1.176-.822-1.176-1.644V34.654Zm-1.25 9.885c0 .546.1 1.766-1.154 1.766-1.004 0-1.176-.848-1.176-1.67v-.397l-1.913 1.27c-.762.499-1.4.797-2.037.797h-1.741c-.664 0-1.4-.202-2.184-.87-1.056-.922-1.034-1.944-1.08-3.238l-.246-7.517c-.026-.869.098-1.791 1.177-1.791 1.006 0 1.128.87 1.153 1.643l.246 7.342c.025.546.047 1.196.245 1.542.198.35.81.498 1.374.498h.785c.27 0 .516-.074.736-.223l3.46-2.215V34.53c0-.821.171-1.643 1.179-1.643 1.004 0 1.176.822 1.176 1.643v10.007Z" class="path-fill" clip-rule="evenodd"></path>
+  </g>
+</svg>
+
+            </span>
+        </div>
+    
+</div>
+        
+    
+
+    
+    </div>
+
+    
+
+
+    </div>
+
+
+        
+    
+        
+        
+        
+            
+            
+
+
+
+
+    
+    <div id="" class="grid-container three-columns default medium-gap" style="">
+
+
+    
+    <div class="grid-container-column">
+
+    
+    
+    
+
+
+
+
+    
+        
+        
+        
+            
+            
+
+
+
+
+
+    <div class="richtext " data-ext-icon="<svg viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon--decorative" role="presentation">
+    <title>An icon of a outbound link arrow</title>
+    <path class="icon-stroke" d="M75.3037 3.98207L3 75.5935M75.3037 3.98207L76.0435 43.3021M75.3037 3.98207L35.951 3.59351" stroke="#F22F46" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+">
+        <h3 style="	font-family: Consolas , Monaco , Andale Mono , Ubuntu Mono , monospace;
+"><span class="copy-extra-large">Official SDKs</span></h3>
+<p><span class="copy-medium">Build quickly and confidently with our SDKs for Node.js, Python, C#, Java, PHP, Ruby, and Go.</span></p>
+
+    </div>
+
+
+
+
+        
+    
+
+    
+    </div>
+
+    
+
+    
+    <div class="grid-container-column">
+
+    
+    
+    
+
+
+
+
+    
+        
+        
+        
+            
+            
+
+
+
+
+
+    <div class="richtext " data-ext-icon="<svg viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon--decorative" role="presentation">
+    <title>An icon of a outbound link arrow</title>
+    <path class="icon-stroke" d="M75.3037 3.98207L3 75.5935M75.3037 3.98207L76.0435 43.3021M75.3037 3.98207L35.951 3.59351" stroke="#F22F46" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+">
+        <h3 style="	font-family: Consolas , Monaco , Andale Mono , Ubuntu Mono , monospace;
+"><span class="copy-extra-large">Twilio Functions</span></h3>
+<p><span class="copy-medium">Bring ideas to life without having to host your own code by deploying with Twilio Functions.</span></p>
+
+    </div>
+
+
+
+
+        
+    
+
+    
+    </div>
+
+    
+
+    
+    <div class="grid-container-column">
+
+    
+    
+
+
+    <div class="richtext " data-ext-icon="<svg viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon--decorative" role="presentation">
+    <title>An icon of a outbound link arrow</title>
+    <path class="icon-stroke" d="M75.3037 3.98207L3 75.5935M75.3037 3.98207L76.0435 43.3021M75.3037 3.98207L35.951 3.59351" stroke="#F22F46" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+">
+        <h3 style="	font-family: Consolas , Monaco , Andale Mono , Ubuntu Mono , monospace;
+"><span class="copy-extra-large">99.95%+ API uptime</span></h3>
+<p><span class="copy-medium">Reliable availability you can trust to power your app’s most important features.</span></p>
+
+    </div>
+
+
+
+
+        
+    
+
+    
+    </div>
+
+    
+
+
+    </div>
+
+
+        
+    
+
+    
+    </div>
+
+    
+
+
+    </div>
+
+
+    
+
+
+
+    </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+</html>
+
+								          

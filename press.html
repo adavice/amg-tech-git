@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="./styles.css"> 
+<link rel="stylesheet" href="./mobile.css">                                                                                                                                
+
+<br><br><br><br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press and Media - Amg Tech LTD</title>
+<style>
+  /* Apply a global box-sizing rule */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  /* Set global font and background */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to right, #372251, #000000);
+    color: white;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  /* Set up the main container */
+  .container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Style for the section */
+  .section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+  }
+
+  /* Style for the section header */
+  .section-header {
+    background-color: #007aff;
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -1rem -1rem 2rem -1rem; /* Pulls the header up to cover the section padding */
+  }
+
+  /* Style for the news items */
+  .news-item:not(:last-child) {
+    border-bottom: 1px solid #ffffff50;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #bbbbbb;
+  }
+
+  .read-more {
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-header">
+      <h2>Press Coverage</h2>
+      <a href="#" class="read-more">VIEW ALL</a>
+    </div>
+    <!-- List of news items -->
+    <div class="news-item">
+      <h3 class="title">We’re focused on our customers, not other big tech competitors: Amg Tech CEO</h3>
+      <p class="date">CNBC ASIA - NOVEMBER 16, 2023</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+    <!-- Additional news items... -->
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <h2>Company News</h2>
+      <a href="#" class="read-more">VIEW ALL</a>
+    </div>
+    <!-- List of news items -->
+    <div class="news-item">
+      <h3 class="title">Amg Tech and Jack Henry Shape the Future of Financial Services</h3>
+      <p class="date">SAN FRANCISCO - DECEMBER 12, 2023</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+    <!-- Additional news items... -->
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+																																																										          
