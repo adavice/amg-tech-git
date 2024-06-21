@@ -3,8 +3,8 @@
 
 :root {
 	--main-color: #292929;
-	--highlight: #ffec00;
-	--highlight2: #ccfa01;
+	--highlight: #ff9d00;
+	--highlight2: #fff402;
 	--highlight-grad: linear-gradient(to right, var(--highlight2), var(--highlight));
 	--darker: #202025;
 }
