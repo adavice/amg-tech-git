@@ -693,6 +693,9 @@ footer {
 	align-items: flex-start;
 	gap: 5px;
 }
+.logo1 img {
+	width:50%;
+}
 
 footer .wrapper {
 	position: relative;
