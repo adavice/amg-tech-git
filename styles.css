@@ -693,9 +693,7 @@ footer {
 	align-items: flex-start;
 	gap: 5px;
 }
-.logo1 img {
-	width:50%;
-}
+
 
 footer .wrapper {
 	position: relative;
@@ -1964,8 +1962,8 @@ Careers*/
 	height: auto !important;
 }
 
-footer .logo {
-	width: 50px;
+footer .logo1 {
+	width: 50%;
 	padding-bottom: 20px;
 }
 
