@@ -1973,7 +1973,8 @@ footer .button {
 	margin: 0;
 	background: rgba(146, 202, 255, 0.10);
 	backdrop-filter: blur(7.5px);
-	border-color: #226CDC;
+	border-color: #fff;
+	color:#fff;
 	display: flex;
 	justify-content: space-around;
 }
