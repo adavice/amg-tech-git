@@ -686,7 +686,7 @@ footer {
 
 .rightblock {
 	display: flex;
-	text-align: right;
+	text-align: left;
 	right: 0;
 	font-weight: 600;
 	flex-direction: column;
@@ -710,7 +710,7 @@ footer .social {
 }
 
 footer .rightblock a {
-	margin-left: 15px;
+	margin-left: 0px;
 	display: inline-block;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1963,7 +1963,7 @@ Careers*/
 }
 
 footer .logo1 {
-	width: 50%;
+	width: 350px!important;
 	padding-bottom: 20px;
 }
 
