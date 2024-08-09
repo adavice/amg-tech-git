@@ -184,7 +184,7 @@ max-width:30px;
 	color: #fff;
 	border-radius: 25px;
 	/*box-shadow: 0 15px 20px -10px var(--highlight);*/
-	padding: 12px 0;
+	padding: 10px 0;
 	width: 250px;
 	/* height: 42px; */
 	margin-right: auto;
@@ -1977,7 +1977,10 @@ footer .button {
 	border-color: #fff;
 	color:#fff;
 	display: flex;
-	justify-content: space-around;
+	flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .white_line {
