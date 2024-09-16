@@ -714,7 +714,7 @@ footer .rightblock a {
 	display: inline-block;
 	font-size: 12px;
 	text-transform: uppercase;
-	/*color: #fff;*/
+	color: #fff!important;
 	font-weight: 500;
 }
 
