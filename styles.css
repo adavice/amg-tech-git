@@ -102,7 +102,6 @@ h4 {
     font-weight: 800;
     font-size: 24px;
     text-transform: uppercase;
-    color: #000;
     text-align: left;
     position: relative;
 }
@@ -119,7 +118,7 @@ h5 {
 
 h4::after {
     content: "";
-    background: #226CDC;
+    background: #ff7425;
     width: 50px;
     height: 1.5px;
     right: 0px;
@@ -423,14 +422,14 @@ a {
 }
 
 .howWorks h2 {
-    color: #226CDC;
+    color: #ff7425;
     text-align: left;
     position: relative;
 }
 
 .howWorks h2::before {
     content: "";
-    background: #226CDC;
+    background: #ff7425;
     width: 70px;
     height: 1.5px;
     bottom: 15px;
@@ -601,14 +600,14 @@ form {
 }
 
 .third_block h2 {
-    color: #226CDC;
+    color: #ff7425;
     padding-bottom: 20px;
     position: relative;
 }
 
 .third_block h2::before {
     content: "";
-    background: #226CDC;
+    background: #ff7425;
     width: 70px;
     height: 1.5px;
     bottom: 15px;
@@ -630,7 +629,7 @@ form {
     font-size: 18px;
     padding-bottom: 20px;
     position: relative;
-    color: #000;
+    color: #fff;
 }
 
 .blog-info {
@@ -642,8 +641,8 @@ form {
 }
 
 .third_block a.button {
-    color: #226CDC;
-    border: 2px solid #226CDC;
+    color: #ff7425;
+    border: 2px solid #ff7425;
     /*background: url(/img/icons/arow_blue.svg);
     background-repeat: no-repeat;
     background-position: 95% 50%;*/
@@ -652,13 +651,13 @@ form {
 }
 
 .third_block h3 {
-    color: #226CDC;
+    color: #ff7425;
 }
 
 .howWorks {
     text-align: center;
     padding: 70px 20px;
-    background-color: #fff;
+    
 }
 
 .blog .howWorks:first-of-type {
@@ -1956,7 +1955,7 @@ Careers*/
 }
 
 .carousel-gallery .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background-color: #226CDC;
+    background-color: #ff7425;
     transform: scale(1.1, 1.1);
 }
 
@@ -2025,7 +2024,7 @@ a.read_more {
     font-weight: 800;
     width: 100px;
     display: block;
-    color: #226CDC;
+    color: #ff7425;
     background: url(/img/icons/arow_blue.svg);
     background-repeat: no-repeat;
     background-position: 95% 65%;
@@ -2121,7 +2120,7 @@ display: none;
 
 p.article-data {
     font-size: 20px;
-    color: #226CDC;
+    color: #ff7425;
     font-weight: 800;
 }
 
