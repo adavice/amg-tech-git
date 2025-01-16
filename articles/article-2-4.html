@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blocks Layout</title>
+    <style>
+      /* CSS Reset */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      
+      /* Existing styles continue below */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #181818;
+        color: #fff;
+      }
+      h2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 40px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      p, li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-6 {
+        flex: 0 0 calc(50% - 10px);
+        padding: 15px;
+      }
+
+      .block {
+        padding: 40px;
+        border-radius: 5px;
+        min-height: 200px;
+        margin-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      li {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        .border-left, .border-right{
+          border-left: none!important;
+          border-right: none!important;
+        }
+        .block {
+          padding: 0;
+        }
+      }
+
+      .border-left {
+        border-left: 1px solid #808080;
+      }
+
+      .border-right {
+        border-right: 1px solid #808080;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid #808080;
+      }
+
+      /* Center block styling */
+      .col-center {
+        flex: 0 0 50%;
+        margin: 0 auto;
+        padding: 15px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+        color: #fff;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 100;
+        padding-left: 65px;
+      }
+
+      .back-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6600;
+        border-radius: 50%;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .p-0{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <h2>System Analytics Page</h2>
+            <p>Our advanced analytics capabilities elevate your data analysis from descriptive to predictive and prescriptive. By leveraging cutting-edge algorithms and machine learning, we help you not only understand what has happened but also anticipate what will happen and determine the best course of action.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block p-0">
+            <img class="w-100" src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_4.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-bottom border-right">
+          <div class="block">
+            <h4>Predictive Modeling:</h4>
+            <ul>
+              <li>Forecasting: Project future trends based on historical data and external factors.</li>
+              <li>Risk Assessment: Identify potential risks and their likelihood of occurrence.</li>
+              <li>Customer Behavior Modeling: Predict customer actions and preferences.</li>
+              <li>Demand Planning: Optimize inventory and resource allocation based on predicted demand.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Anomaly Detection:</h4>
+            <ul>
+              <li>Real-time Monitoring: Continuously scan data streams for unusual patterns.</li>
+              <li>Multi-dimensional Analysis: Detect anomalies across multiple variables simultaneously.</li>
+              <li>Adaptive Thresholds: Automatically adjust detection parameters based on evolving patterns.</li>
+              <li>Root Cause Analysis: Trace anomalies back to their source for quick resolution.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right border-bottom">
+          <div class="block">
+            <h4>Trend Analysis:</h4>
+            <ul>
+              <li>Pattern Recognition: Uncover hidden trends and cyclical behaviors in your data.</li>
+              <li>Correlation Discovery: Identify relationships between different variables and trends.</li>
+              <li>Trend Forecasting: Project how current trends will evolve over time.</li>
+              <li>Comparative Analysis: Benchmark trends against industry standards or competitors.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Machine Learning Integration:</h4>
+            <ul>
+              <li>Automated Model Selection: Intelligently choose the best algorithm for each analysis task.</li>
+              <li>Feature Engineering: Automatically identify and create relevant features for analysis.</li>
+              <li>Ensemble Methods: Combine multiple models for improved accuracy and robustness.</li>
+              <li>Continuous Learning: Refine models over time as new data becomes available.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-center border-left border-right">
+          <div class="block">
+            <h4>Scenario Planning:</h4>
+            <ul>
+              <li>What-if Analysis: Model different business scenarios to inform strategic decision-making.</li>
+              <li>Sensitivity Analysis: Understand how changes in variables affect outcomes.</li>
+              <li>Goal Seeking: Determine the inputs required to achieve specific business targets.</li>
+              <li>Monte Carlo Simulations: Account for uncertainty in predictions and planning.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <p>Conclusion: Our system analytics go beyond traditional business intelligence, offering a forward-looking perspective that helps you stay ahead of the curve. By transforming complex data into clear, actionable insights, we empower you to make proactive decisions that drive business success in an ever-changing landscape.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="back-link">Back</a>
+  </body>
+</html>

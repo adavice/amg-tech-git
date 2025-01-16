@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blocks Layout</title>
+    <style>
+      /* CSS Reset */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      
+      /* Existing styles continue below */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #181818;
+        color: #fff;
+      }
+      h2 {
+        font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      p, li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-6 {
+        flex: 0 0 calc(50% - 10px);
+        padding: 15px;
+      }
+
+      .block {
+        padding: 40px;
+        border-radius: 5px;
+        min-height: 200px;
+        margin-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      li {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        .border-left, .border-right{
+          border-left: none!important;
+          border-right: none!important;
+        }
+        .block {
+          padding: 0;
+        }
+      }
+
+      .border-left {
+        border-left: 1px solid #808080;
+      }
+
+      .border-right {
+        border-right: 1px solid #808080;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid #808080;
+      }
+
+      /* Center block styling */
+      .col-center {
+        flex: 0 0 50%;
+        margin: 0 auto;
+        padding: 15px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+        color: #fff;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 100;
+        padding-left: 65px;
+      }
+
+      .back-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6600;
+        border-radius: 50%;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .p-0{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <h2>IT Benefits</h2>
+            <p>Introduction: Our system is engineered to revolutionize how IT professionals manage and leverage data across the enterprise. By streamlining processes, enhancing security, and providing unparalleled flexibility, we empower your IT team to drive innovation and efficiency throughout your organization.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block p-0"><img src="" alt="" />
+          <img class="w-100" src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_1.png" alt=""></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-bottom border-right">
+          <div class="block">
+            <h4>Seamless Integration:</h4>
+            <ul>
+              <li>Database Connectivity: Connect to virtually any database type, including SQL, NoSQL, and cloud-based solutions.</li>
+              <li>API Support: Robust API allows for easy integration with existing enterprise systems.</li>
+              <li>Legacy System Compatibility: Bridge the gap between legacy systems and modern data platforms.</li>
+              <li>Real-time Synchronization: Ensure data consistency across all connected systems.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Scalability and Performance:</h4>
+            <ul>
+              <li>Elastic Architecture: Automatically scale resources up or down based on demand.</li>
+              <li>Load Balancing: Optimize performance across distributed systems.</li>
+              <li>Caching Mechanisms: Improve query response times with intelligent data caching.</li>
+              <li>Big Data Ready: Handle petabytes of data without compromising system performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right border-bottom">
+          <div class="block">
+            <h4>Advanced Security Features:</h4>
+            <ul>
+              <li>End-to-end Encryption: Protect data in transit and at rest with military-grade encryption.</li>
+              <li>Multi-factor Authentication: Ensure only authorized personnel can access sensitive information.</li>
+              <li>Role-based Access Control: Granular permissions management for data and system features.</li>
+              <li>Audit Trails: Comprehensive logging of all system activities for compliance and security analysis.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Automated Maintenance and Updates:</h4>
+            <ul>
+              <li>Self-healing Capabilities: Automatically detect and resolve common system issues.</li>
+              <li>Scheduled Maintenance: Plan and execute maintenance tasks with minimal disruption.</li>
+              <li>Version Control: Easily manage and roll back system updates if needed.</li>
+              <li>Patch Management: Streamline the process of applying security patches and system upgrades.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-center border-left border-right">
+          <div class="block">
+            <h4>Resource Optimization:</h4>
+            <ul>
+              <li>Workload Management: Intelligently distribute processing tasks across available resources.</li>
+              <li>Storage Optimization: Implement data compression and deduplication to reduce storage costs.</li>
+              <li>Energy Efficiency: Smart resource allocation to minimize power consumption in data centers.</li>
+              <li>License Management: Track and optimize software licenses across the enterprise.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <p>Conclusion: By leveraging our system, IT professionals can transform their role from maintenance to innovation. With reduced overhead, enhanced security, and improved efficiency, your IT team can focus on strategic initiatives that drive business growth and competitive advantage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="back-link">Back</a>
+  </body>
+</html>

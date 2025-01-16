@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blocks Layout</title>
+    <style>
+      /* CSS Reset */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      
+      /* Existing styles continue below */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #181818;
+        color: #fff;
+      }
+      h2 {
+        font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      p, li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-6 {
+        flex: 0 0 calc(50% - 10px);
+        padding: 15px;
+      }
+
+      .block {
+        padding: 40px;
+        border-radius: 5px;
+        min-height: 200px;
+        margin-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      li {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        .border-left, .border-right{
+          border-left: none!important;
+          border-right: none!important;
+        }
+        .block {
+          padding: 0;
+        }
+      }
+
+      .border-left {
+        border-left: 1px solid #808080;
+      }
+
+      .border-right {
+        border-right: 1px solid #808080;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid #808080;
+      }
+
+      /* Center block styling */
+      .col-center {
+        flex: 0 0 50%;
+        margin: 0 auto;
+        padding: 15px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+        color: #fff;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 100;
+        padding-left: 65px;
+      }
+
+      .back-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6600;
+        border-radius: 50%;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .p-0{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <h2>Analyst Benefits</h2>
+            <p>Our platform is designed to empower analysts with cutting-edge tools that turn raw data into actionable insights. By combining ease of use with powerful analytical capabilities, we enable your team to uncover hidden patterns, forecast trends, and drive data-informed decision-making across your organization.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block p-0">
+            <img class="w-100" src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_2.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-bottom border-right">
+          <div class="block">
+            <h4>Intuitive Interface:</h4>
+            <ul>
+              <li>Drag-and-drop Functionality: Create complex visualizations without coding knowledge.</li>
+              <li>Customizable Dashboards: Design personalized views tailored to specific analytical needs.</li>
+              <li>Interactive Elements: Engage with data through clickable charts and dynamic filters.</li>
+              <li>Template Library: Access a wide range of pre-built reports and visualizations for quick starts.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Real-time Analysis:</h4>
+            <ul>
+              <li>Live Data Connections: Analyze the most current data as it flows into the system.</li>
+              <li>Automated Refresh: Set custom intervals for data updates to ensure timely insights.</li>
+              <li>Alert Systems: Receive notifications when key metrics cross predefined thresholds.</li>
+              <li>Streaming Analytics: Process and analyze high-velocity data streams in real-time.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right border-bottom">
+          <div class="block">
+            <h4>Advanced Filtering and Exploration:</h4>
+            <ul>
+              <li>Multi-dimensional Filtering: Slice and dice data across multiple variables simultaneously.</li>
+              <li>Drill-down Capabilities: Explore from high-level summaries to granular details with ease.</li>
+              <li>Advanced Search: Quickly locate specific data points or patterns within large datasets.</li>
+              <li>What-if Analysis: Model different scenarios by adjusting parameters on the fly.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Data Visualization Techniques:</h4>
+            <ul>
+              <li>Chart Variety: Access a wide range of chart types, from basic to advanced visualizations.</li>
+              <li>Geospatial Mapping: Visualize data with geographical context using interactive maps.</li>
+              <li>Network Diagrams: Illustrate complex relationships and connections within your data.</li>
+              <li>Custom Visualizations: Create bespoke visual representations tailored to your specific needs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-center border-left border-right">
+          <div class="block">
+            <h4>Collaborative Features:</h4>
+            <ul>
+              <li>Shared Workspaces: Collaborate with team members in real-time on analyses and reports.</li>
+              <li>Version Control: Track changes and revert to previous versions of analyses when needed.</li>
+              <li>Annotation Tools: Add comments and insights directly to visualizations and reports.</li>
+              <li>Export Options: Share insights in various formats, including PDF, Excel, and interactive web reports.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <p>Conclusion: With our powerful yet user-friendly platform, analysts can spend less time wrangling data and more time generating valuable insights. By democratizing data analysis across your organization, you can foster a culture of informed decision-making that drives business success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="back-link">Back</a>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blocks Layout</title>
+    <style>
+      /* CSS Reset */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      
+      /* Existing styles continue below */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #181818;
+        color: #fff;
+      }
+      h2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 40px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      p, li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-6 {
+        flex: 0 0 calc(50% - 10px);
+        padding: 15px;
+      }
+
+      .block {
+        padding: 40px;
+        border-radius: 5px;
+        min-height: 200px;
+        margin-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      li {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        .border-left, .border-right{
+          border-left: none!important;
+          border-right: none!important;
+        }
+        .block {
+          padding: 0;
+        }
+      }
+
+      .border-left {
+        border-left: 1px solid #808080;
+      }
+
+      .border-right {
+        border-right: 1px solid #808080;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid #808080;
+      }
+
+      /* Center block styling */
+      .col-center {
+        flex: 0 0 50%;
+        margin: 0 auto;
+        padding: 15px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+        color: #fff;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 100;
+        padding-left: 65px;
+      }
+
+      .back-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6600;
+        border-radius: 50%;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .p-0{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="block">
+            <h2>Collaboration Features Page</h2>
+            <p>In today's interconnected business environment, effective collaboration is key to success. Our platform fosters a culture of data-driven teamwork, enabling seamless sharing of insights and promoting collective decision-making across your organization.</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block p-0">
+            <img class="w-100" src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_3.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-bottom border-right">
+          <div class="block">
+            <h4>One-Click Sharing:</h4>
+            <ul>
+              <li>Instant Report Distribution: Share reports and dashboards with team members in seconds.</li>
+              <li>Customizable Sharing Options: Control what data and visualizations are shared with each recipient.</li>
+              <li>Scheduled Reports: Automate the distribution of regular reports to stakeholders.</li>
+              <li>External Sharing: Securely share insights with clients or partners outside your organization.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Real-time Updates:</h4>
+            <ul>
+              <li>Live Collaboration: Allow multiple users to work on the same dashboard simultaneously.</li>
+              <li>Push Notifications: Alert team members to new insights or changes in key metrics.</li>
+              <li>Activity Feeds: Keep track of all updates and changes in a centralized news feed.</li>
+              <li>Data Refresh Controls: Set how frequently shared dashboards update with new data.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right border-bottom">
+          <div class="block">
+            <h4>Granular Permissions:</h4>
+            <ul>
+              <li>Role-based Access Control: Assign viewing and editing rights based on user roles.</li>
+              <li>Data-level Security: Control access to specific datasets or even individual data points.</li>
+              <li>Temporary Access: Grant time-limited access to external users or for specific projects.</li>
+              <li>Audit Trails: Monitor who accessed what data and when for security and compliance.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Collaborative Annotations:</h4>
+            <ul>
+              <li>In-context Comments: Add notes and insights directly to specific data points or visualizations.</li>
+              <li>Discussion Threads: Engage in detailed conversations about data findings.</li>
+              <li>@Mentions: Tag team members to draw their attention to specific insights.</li>
+              <li>Annotation History: Track the evolution of discussions and decisions over time.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right">
+          <div class="block">
+            <h4>Version Control:</h4>
+            <ul>
+              <li>Revision History: Keep track of all changes made to reports and dashboards.</li>
+              <li>Comparison Tools: Easily compare different versions of a report side by side.</li>
+              <li>Rollback Capabilities: Revert to previous versions if needed.</li>
+              <li>Change Logs: Maintain detailed records of who made what changes and when.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 col-center">
+            <div class="block">
+                <h4>Mobile Access:</h4>
+                <ul>
+                  <li>Responsive Design: Access all features seamlessly across desktop and mobile devices.</li>
+                  <li>Offline Mode: View critical data and reports even without an internet connection.</li>
+                  <li>Push Notifications: Stay updated with alerts on your mobile device.</li>
+                  <li>Mobile-optimized Interactions: Tailored touch controls for easy navigation on smartphones and tablets.</li>
+                </ul>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="block">
+            <p>Conclusion: Our collaboration features transform data analysis from a solitary task into a team sport. By breaking down information silos and fostering open communication, we help your entire organization harness the power of collective intelligence, leading to better, faster, and more informed decision-making.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="back-link">Back</a>
+  </body>
+</html>

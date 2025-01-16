@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blocks Layout</title>
+    <style>
+      /* CSS Reset */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      
+      /* Existing styles continue below */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #181818;
+        color: #fff;
+      }
+      h2 {
+        font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 20px;
+      }
+
+      h4 {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      p, li {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-6 {
+        flex: 0 0 calc(50% - 10px);
+        padding: 15px;
+      }
+
+      .block {
+        padding: 40px;
+        border-radius: 5px;
+        min-height: 200px;
+        margin-bottom: 20px;
+        height: auto;
+        overflow: hidden;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      li {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      @media (max-width: 768px) {
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        .border-left, .border-right{
+          border-left: none!important;
+          border-right: none!important;
+        }
+        .block {
+          padding: 0;
+        }
+      }
+
+      .border-left {
+        border-left: 1px solid #808080;
+      }
+
+      .border-right {
+        border-right: 1px solid #808080;
+      }
+
+      .border-bottom {
+        border-bottom: 1px solid #808080;
+      }
+
+      /* Center block styling */
+      .col-center {
+        flex: 0 0 50%;
+        margin: 0 auto;
+        padding: 15px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+        color: #fff;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 100;
+        padding-left: 65px;
+      }
+
+      .back-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: #ff6600;
+        border-radius: 50%;
+      }
+      .w-100 {
+        width: 100%;
+      }
+      .p-0{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6 ">
+          <div class="block">
+            <h2>Data Clarity</h2>
+            <p>In today's data-rich environment, the ability to see through the noise and focus on what truly matters is paramount. Our system acts as a clarity engine, transforming overwhelming data volumes into clear, actionable insights that drive informed decision-making</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="block p-0"><img src="" alt="" />
+          <img class="w-100" src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_3.png" alt=""></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-bottom border-right">
+          <div class="block">
+            <h4>Data Consolidation</h4>
+            <ul>
+              <li>Centralized Data repository: Unify data from multiple sources into a single, coherent view.</li>
+              <li>Automated Data Pipelines: Streamline the process of collecting and integrating data.</li>
+              <li>Data Cleansing: Automatically detect and correct inconsistencies and errors in your data.</li>
+              <li>Metadata Management: Maintain a clear understanding of data lineage and definitions.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Noise Reduction</h4>
+            <ul>
+              <li>Intelligent Filtering: Automatically highlight significant trends and anomalies.</li>
+              <li>Smart Aggregation: Combine related data points to reveal meaningful patterns.</li>
+              <li>Outlier Detection: Identify and isolate statistical anomalies for focused analysis.</li>
+              <li>Signal Processing: Apply advanced algorithms to separate signal from noise.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 border-right border-bottom">
+          <div class="block">
+            <h4>Visual Clarity</h4>
+            <ul>
+              <li>Intuitive Dashboards: Present complex data through clear, understandable visualizations.</li>
+              <li>Dynamic Charts: Interactive graphs that adapt to user focus and requirements.</li>
+              <li>Color Psychology: Thoughtful use of color to enhance data comprehension.</li>
+              <li>Layout Optimization: Organized presentation that guides the eye to key insights.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 border-bottom">
+          <div class="block">
+            <h4>Contextual Insights</h4>
+            <ul>
+              <li>Relationship Mapping: Understand connections between different data points.</li>
+              <li>Industry Benchmarks: Compare performance against relevant standards.</li>
+              <li>Trend Analysis: Identify patterns and project future developments.</li>
+              <li>Impact Assessment: Evaluate the significance of changes and anomalies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-center border-left border-right">
+          <div class="block">
+            <h4>Historical Perspective</h4>
+            <ul>
+              <li>Timeline Analysis: Track changes and developments over time.</li>
+              <li>Version Control: Maintain records of data evolution and changes.</li>
+              <li>Pattern Recognition: Identify recurring trends and cycles.</li>
+              <li>Comparative Analysis: Connect past events to current situations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-12">
+        <div class="block">
+          <p>By bringing unprecended clarity to your data, our system enables you to cut trough complexity and focus on what truly drives your business. With clear, contextualized insights at yout fingertips, you're empowered to make confident decisions that propel your organization forward.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    <a href="#" class="back-link">Back</a>
+
+</body>
+</html>
