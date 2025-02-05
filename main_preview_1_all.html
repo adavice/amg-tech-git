@@ -2741,10 +2741,6 @@ border: 2px solid #fff;
         width: 100% !important;
     }
 
-    .about .iconsection.dark .iconbox:not(:nth-child(-n+4)) {
-        margin: 30px 0 0 0;
-    }
-
     .about .iconsection>.wrapper {
         padding-bottom: 70px;
     }
@@ -3301,13 +3297,89 @@ footer {
         width: 500px;
         height: 500px;
         border-radius: 4px;
+        
     }
     video {
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
-    }
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+}
     </style>
+<!-- Add this style section -->
+<style>
+.custom-video-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    border-radius:50%
+}
+
+.custom-video-container video {
+    width:auto;
+    height: 100%;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+}
+
+.custom-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.custom-play-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.custom-play-button svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--highlight);
+}
+
+.custom-video-container.playing .custom-play-button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.custom-video-container:hover .custom-play-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 980px) {
+    .custom-video-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .custom-play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .custom-play-button svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+</style>
+
 <style>
 .site-header {
     top: 0;
@@ -3562,13 +3634,20 @@ footer {
 
 
 <div class="container"> 
-    <div class="video-container">
-        <video width="500" height="500" controls="">
-            <source src="https://github.com/adavice/amg-tech-git/blob/main/img/AMGTECHV2.mp4" type="video/mp4">
+    <div class="custom-video-container">             
+        <video id="mainVideo" width="500" height="500">
+            <source src="/img/3129576-uhd_3840_2160_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div class="custom-play-button">
+            <svg class="play-icon" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+        </div>
     </div>
-
 </div> </div>
         </div>
         <div class="land__overlay"> </div>
@@ -3883,6 +3962,49 @@ footer {
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainer = document.querySelector('.custom-video-container');
+    const video = document.getElementById('mainVideo');
+    const playButton = document.querySelector('.custom-play-button');
+    const playIcon = document.querySelector('.play-icon');
+    const pauseIcon = document.querySelector('.pause-icon');
+
+    // Update visual state
+    function updatePlayState(isPlaying) {
+        videoContainer.classList.toggle('playing', isPlaying);
+        playIcon.style.display = isPlaying ? 'none' : 'block';
+        pauseIcon.style.display = isPlaying ? 'block' : 'none';
+    }
+
+    function togglePlay() {
+        if (video.paused) {
+            // Add promise handling for better mobile support
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => updatePlayState(true))
+                    .catch(error => {
+                        console.log("Video play failed:", error);
+                        updatePlayState(false);
+                    });
+            }
+        } else {
+            video.pause();
+            updatePlayState(false);
+        }
+    }
+
+    // Event listeners
+    playButton.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+    
+    // Additional event listeners for better state management
+    video.addEventListener('ended', () => updatePlayState(false));
+    video.addEventListener('pause', () => updatePlayState(false));
+    video.addEventListener('play', () => updatePlayState(true));
+});
+</script>
 
 
 
