@@ -1,8 +1,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fix the broken Poppins font import and add Bootstrap Icons properly -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
      <link rel="stylesheet" href="https://amgtech.io.net/c/index?page=styles.css">
@@ -3676,8 +3678,10 @@ footer {
 
             </div>
             <div class="grid-container-column text-container">
-                <h1>IT PROFESSIONALS</h1>
-
+                <div class="section-heading">
+                    <h1>IT PROFESSIONALS</h1>
+                    <i class="bi bi-gear-fill"></i>
+                </div>
 <p>IT professionals, streamline your data infrastructure with our cutting-edge system. Seamlessly integrate with virtually any database, eliminating silos and reducing maintenance overhead. Our platform's robust security features and scalable architecture ensure that your enterprise data remains protected while accommodating growing volumes. Experience significant time savings in data preparation and management, allowing your team to focus on strategic initiatives that drive innovation.  <br><br>
  <a class="button" id="one" href="/c/index?page=page7"><span>Read more about IT benefits</span> </a></p>
 
@@ -3690,7 +3694,10 @@ footer {
     <section class="content animate-section animate-left">
         <div class="grid-container" id="two">
             <div class="grid-container-column text-container">
-                <h1>ANALYST BENEFITS</h1>
+                <div class="section-heading">
+                    <h1>ANALYST BENEFITS</h1>
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
                 <p>Analysts, unlock the full potential of your data with our intuitive drag-and-drop interface. Create compelling visualizations in minutes, not hours, without the need for complex coding. Our system empowers you to explore data from multiple angles, uncovering hidden patterns and trends that inform critical business decisions. With advanced filtering and aggregation capabilities, you can drill down into the details or zoom out for a big-picture view, enhancing your ability to deliver actionable insights to stakeholders. 
 </br></br></br>
                 
@@ -3699,7 +3706,7 @@ footer {
             </div>
             <div class="grid-container-column image-container" >
              
-                <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_2.png" alt="Customer engaging with SMS marketing">
+                <img src="./img/top1_4.png" alt="Customer engaging with SMS marketing">
             </div>
         </div>
     </section>
@@ -3716,7 +3723,10 @@ footer {
                 <img src="./img/top1_3.png" alt="Customer engaging with SMS marketing">
             </div>
             <div class="grid-container-column text-container">
-                <h1>DATA CLARITY</h1>
+                <div class="section-heading">
+                    <h1>DATA CLARITY</h1>
+                    <i class="bi bi-search"></i>
+                </div>
                 <p>In today's data-driven landscape, clarity is key. Our system acts as a powerful lens, bringing your data into sharp focus. By consolidating information from disparate sources into a single, user-friendly platform, we help you cut through the noise and identify what truly matters. Whether you're tracking market trends, monitoring operational efficiency, or forecasting financial performance, our solution provides the clarity you need to navigate complex business challenges with confidence. </br></br></br>
                     <a class="button" id="three" href="/c/index?page=page6"><span>Read more about Data Clarity</span>
 </a></p>
@@ -3735,13 +3745,16 @@ footer {
         <div class="grid-container" id="four">
             
             <div class="grid-container-column text-container">
-                <h1>SYSTEM ANALYTICS</h1>
+                <div class="section-heading">
+                    <h1>SYSTEM ANALYTICS</h1>
+                    <i class="bi bi-activity"></i>
+                </div>
 <p>Harness the power of advanced analytics without the complexity. Our system goes beyond basic reporting, offering predictive modeling, trend analysis, and anomaly detection out of the box. By leveraging machine learning algorithms, we help you uncover insights that might otherwise remain hidden. From identifying emerging market opportunities to optimizing supply chain operations, our analytics capabilities give you the edge in today's competitive business environment.  </br></br></br> 
 <a class="button" id="four_1"  href="/c/index?page=api"><span>Read more about System Analytics</span></a></p>
             </div>
 
 <div class="grid-container-column image-container" >
-                <img src="./img/top1_4.png">
+                <img src="./img/top1_2.png">
             </div>
         </div>
     </section>
@@ -3758,11 +3771,15 @@ footer {
     <section class="content animate-section animate-up">
         <div class="grid-container">
             <div class="grid-container-column image-container">
-               <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_5.png">
+                <img src="./img/top1_5.png">
             </div>
             <div class="grid-container-column text-container">
-                <h1>COLLABORATION FEATURES</h1>
-                <p>Collaboration is at the heart of innovation, and our platform makes sharing insights effortless. With just a click, you can distribute reports, dashboards, and visualizations to team members across your organization. Real-time updates ensure everyone works with the latest data, while granular access controls allow you to manage permissions with ease. By breaking down information barriers, our system fosters a culture of data-driven decision-making, empowering your entire organization to act on insights quickly and confidently. </br></br></br> <a class="button" id="five" href="/c/index?page=api"><span >Read more about Collaboration Features</span></a></p>
+                <div class="section-heading">
+                    <h1>COLLABORATION<br> FEATURES<i style="display: inline-block; margin-left: 20px;" class="bi bi-people-fill"></i></h1>
+                    
+                </div>
+                <p>Collaboration is at the heart of innovation, and our platform makes sharing insights effortless. With just a click, you can distribute reports, dashboards, and visualizations to team members across your organization. Real-time updates ensure everyone works with the latest data, while granular access controls allow you to manage permissions with ease. By breaking down information barriers, our system fosters a culture of data-driven decision-making, empowering your entire organization to act on insights quickly and confidently.</br></br></br>
+                <a class="button" id="five" href="/c/index?page=api"><span>Read more about Collaboration Features</span></a></p>
             </div>
         </div>
     </section>
@@ -4026,6 +4043,34 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="./js/script.js"></script>
     <script src="./js/popup.js"></script>
     <script src="./js/mob_menu.js"></script>
+<style>
+/* Add or update this in your existing styles section */
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-start; /* Add this to push icon to the right */
+}
+
+.section-heading i.bi {
+    font-size: 32px;
+    color: var(--highlight);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add responsive styles */
+@media (max-width: 980px) {
+    .section-heading i.bi {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+    }
+}
+</style>
 </html>
 
 
