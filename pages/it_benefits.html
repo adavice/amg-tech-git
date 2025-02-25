@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT Benefits - AMG Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        h2.title {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--highlight);
+        margin-bottom: 1.5rem;
+      }
+
+      h2.title i {
+        font-size: 24px;
+        color: var(--highlight);
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+        .page-content {
+            padding: 5rem 0;
+        }
+
+        .main-section {
+            width: 75%;
+            padding-right: 3rem;
+        }
+
+        .side-section {
+            width: 25%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .page-title {
+            color: var(--highlight);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "→";
+            color: var(--highlight);
+            position: absolute;
+            left: 0;
+        }
+
+        .side-card {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .side-card:last-child {
+            border-bottom: none;
+        }
+
+        .side-card h3 {
+            color: var(--highlight);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .side-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .side-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .side-card a {
+            color: var(--highlight);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .button {
+            background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+            border: 0;
+            font-weight: 200;
+            text-align: center;
+            display: block;
+            color: #fff;
+            padding: 20px 70px;
+            transition: box-shadow 0.5s;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: fit-content;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .main-section, .side-section {
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page-content">
+        <div class="content-wrapper">
+            <div class="main-section">
+                <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_1.png" 
+                     alt="IT Professional Benefits" class="img-fluid mb-4">
+                
+                <h2 class="page-title title">IT Benefits<i class="bi bi-gear-fill"></i></h2>
+                
+                <!-- Introduction -->
+                <h2 class="section-title">Introduction</h2>
+                <p class="content-text">Our system is engineered to revolutionize how IT professionals manage and leverage data across the enterprise. By streamlining processes, enhancing security, and providing unparalleled flexibility, we empower your IT team to drive innovation and efficiency throughout your organization.</p>
+
+                <!-- Seamless Integration -->
+                <h2 class="section-title">Seamless Integration</h2>
+                <ul class="feature-list">
+                    <li>Database Connectivity: Connect to virtually any database type, including SQL, NoSQL, and cloud-based solutions</li>
+                    <li>API Support: Robust API allows for easy integration with existing enterprise systems</li>
+                    <li>Legacy System Compatibility: Bridge the gap between legacy systems and modern data platforms</li>
+                    <li>Real-time Synchronization: Ensure data consistency across all connected systems</li>
+                </ul>
+
+                <!-- Scalability and Performance -->
+                <h2 class="section-title">Scalability and Performance</h2>
+                <ul class="feature-list">
+                    <li>Elastic Architecture: Automatically scale resources up or down based on demand</li>
+                    <li>Load Balancing: Optimize performance across distributed systems</li>
+                    <li>Caching Mechanisms: Improve query response times with intelligent data caching</li>
+                    <li>Big Data Ready: Handle petabytes of data without compromising system performance</li>
+                </ul>
+
+                <!-- Advanced Security Features -->
+                <h2 class="section-title">Advanced Security Features</h2>
+                <ul class="feature-list">
+                    <li>End-to-end Encryption: Protect data in transit and at rest with military-grade encryption</li>
+                    <li>Multi-factor Authentication: Ensure only authorized personnel can access sensitive information</li>
+                    <li>Role-based Access Control: Granular permissions management for data and system features</li>
+                    <li>Audit Trails: Comprehensive logging of all system activities for compliance and security analysis</li>
+                </ul>
+
+                <a href="/c/index?page=sign_up" class="button">Get Started</a>
+            </div>
+
+            <div class="side-section">
+                <!-- Analyst Benefits Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_2.png" 
+                         alt="Analyst Benefits">
+                    <h3>Analyst Benefits</h3>
+                    <p class="content-text">Our platform empowers analysts with cutting-edge tools that turn raw data into actionable insights.</p>
+                    <a href="/c/index?page=page6">Learn more →</a>
+                </div>
+
+                <!-- Data Clarity Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_8.png" 
+                         alt="Data Clarity">
+                    <h3>Data Clarity</h3>
+                    <p class="content-text">Transform overwhelming data volumes into clear, actionable insights that drive informed decision-making.</p>
+                    <a href="/c/index?page=page5">Learn more →</a>
+                </div>
+
+                <!-- System Analytics Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_4.png" 
+                         alt="System Analytics">
+                    <h3>System Analytics</h3>
+                    <p class="content-text">Leverage cutting-edge algorithms and machine learning to anticipate trends and optimize operations.</p>
+                    <a href="/c/index?page=api">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.from(".page-content", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Careers - AMG Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <style>
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            color: white;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--highlight);
+        }
+
+        .job-requirements li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-card h3, .job-card h4 {
+            color: white;
+        }
+
+        .job-card .d-flex span {
+            color: var(--highlight);
+            font-size: 0.9rem;
+        }
+
+        .job-card .d-flex i {
+            margin-right: 5px;
+        }
+
+        .button {
+            background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+            border: 0;
+            font-weight: 200;
+            text-align: center;
+            display: block;
+            color: #fff;
+            padding: 20px 64px;
+            transition: box-shadow 0.5s;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        h2.title {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: white;
+        }
+
+        h2.title i {
+            font-size: 24px;
+            color: var(--highlight);
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        .hero h1, .hero h3 {
+            color: white;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        #positions {
+            min-height: 100vh;
+            padding-top: 5rem;
+        }
+
+        .animate-block {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero main_page vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h2 class="display-4 mb-3 title">Join Our Team</h2>
+                    <h3 class="h2 mb-4">Build the Future of Analytics</h3>
+                    <p class="lead mb-4">Join our innovative team and help shape the future of data analytics. We're looking for passionate individuals who want to make a difference.</p>
+                    <a class="button mb-3" href="#positions">View Open Positions <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://adavice.github.io/amg-tech-git/img/team.jpg" alt="Our Team" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section id="positions" class="py-5 content-section">
+        <div class="container">
+            <h2 class="title text-center mb-5 animate-fade-in">
+                Open Positions <i class="bi bi-briefcase"></i>
+            </h2>
+            
+            <div class="row g-4">
+                <!-- Senior Developer Position -->
+                <div class="col-12 col-lg-6 animate-block" data-animation="left">
+                    <div class="job-card p-4 h-100">
+                        <h3 class="h4 mb-3">Senior Backend Developer</h3>
+                        <div class="d-flex gap-3 mb-4">
+                            <span><i class="bi bi-geo-alt"></i> Remote</span>
+                            <span><i class="bi bi-clock"></i> Full-time</span>
+                            <span><i class="bi bi-bar-chart"></i> Senior Level</span>
+                        </div>
+                        <div class="job-requirements mb-4">
+                            <h4 class="h5 mb-3">Requirements:</h4>
+                            <ul>
+                                <li>5+ years of experience with Python and Node.js</li>
+                                <li>Strong background in database design and optimization</li>
+                                <li>Experience with cloud platforms (AWS/Azure)</li>
+                                <li>Understanding of data analytics and ML pipelines</li>
+                            </ul>
+                        </div>
+                        <a href="/apply" class="button">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Data Scientist Position -->
+                <div class="col-12 col-lg-6 animate-block" data-animation="right">
+                    <div class="job-card p-4 h-100">
+                        <h3 class="h4 mb-3">Senior Data Scientist</h3>
+                        <div class="d-flex gap-3 mb-4">
+                            <span><i class="bi bi-geo-alt"></i> Hybrid</span>
+                            <span><i class="bi bi-clock"></i> Full-time</span>
+                            <span><i class="bi bi-bar-chart"></i> Senior Level</span>
+                        </div>
+                        <div class="job-requirements mb-4">
+                            <h4 class="h5 mb-3">Requirements:</h4>
+                            <ul>
+                                <li>MS/PhD in Computer Science, Statistics, or related field</li>
+                                <li>Experience with ML frameworks (TensorFlow, PyTorch)</li>
+                                <li>Strong background in statistical analysis</li>
+                                <li>Excellence in data visualization and presentation</li>
+                            </ul>
+                        </div>
+                        <a href="/apply" class="button">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero animation
+            gsap.from('.hero', {
+                opacity: 0,
+                y: 30,
+                duration: 1.2,
+                ease: 'power2.out'
+            });
+
+            // Title animation
+            gsap.from('.animate-fade-in', {
+                scrollTrigger: {
+                    trigger: '.animate-fade-in',
+                    start: 'top 80%',
+                },
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+
+            // Job cards animations
+            // gsap.from('.job-card', {
+            //     scrollTrigger: {
+            //         trigger: '#positions',
+            //         start: 'top 60%',
+            //     },
+            //     opacity: 0,
+            //     y: 50,
+            //     duration: 1,
+            //     stagger: 0.3,
+            //     ease: 'power2.out'
+            // });
+
+            // Requirements list animations
+            gsap.from('.job-requirements li', {
+                scrollTrigger: {
+                    trigger: '.job-requirements',
+                    start: 'top 70%',
+                },
+                opacity: 0,
+                x: -20,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+        });
+    </script>
+</body>
+</html>

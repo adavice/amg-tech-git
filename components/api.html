@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Integration - AMG Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+        h2.title {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--highlight);
+        margin-bottom: 1.5rem;
+      }
+
+      h2.title i {
+        font-size: 24px;
+        color: var(--highlight);
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .content-section {
+            padding: 5rem 0;
+            overflow: hidden;
+        }
+
+        .content-section img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .content-section:hover img {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            display: none;
+        }
+
+        p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .animate-section {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 0;
+            }
+            
+            .order-mobile-1 {
+                order: 1;
+            }
+            
+            .order-mobile-2 {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Section 1 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6">
+                        <img src="https://media.licdn.com/dms/image/D4D12AQFJwNdd8OvbKg/article-cover_image-shrink_600_2000/0/1669027459896?e=2147483647&v=beta&t=Rjqjztmw615R3W08lQAh4q2o9qtFqzR1clgjnsxihgY" alt="API Integration" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="title">Seamless Integration <i class="bi bi-gear-wide-connected"></i></h2>
+                        <p>Radinet API offers seamless integration across multiple programming languages including PHP, C++, Java, Python, Perl, Node.js, and more. Tailor the API to fit your specific development environment and build robust messaging solutions with ease.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="content-section bg-darker">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="https://www.rolustech.com/wp-content/uploads/2017/01/Blog-Banner-mid.jpg" alt="Organizational Systems" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="title">Organizational Systems <i class="bi bi-building-gear"></i></h2>
+                        <p>Integrate Radinet's API into various systems within your organization for a unified communication experience. Enhance your messaging, email systems, CRM, billing, and customer support with our powerful API, maximizing the efficiency and reach of your communications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6">
+                        <img src="https://brightsec.com/wp-content/uploads/2022/04/Slide-16_9-74-1024x576.png" alt="Security Features" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="title">Security Features <i class="bi bi-shield-lock"></i></h2>
+                        <p>Radinet's API prioritizes maximum encryption and privacy, ensuring the security of your communications. Your data is securely stored in the cloud, with privacy and security as our top concerns. Trust in an API that safeguards your information above all else.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="content-section bg-darker">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="https://www.innoinstant.com/assets/images/chat-api/banner.png" alt="Enterprise Messaging" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="title">Enterprise Messaging <i class="bi bi-envelope-paper"></i></h2>
+                        <p>Discover how Radinet's Communications API offers a simple, powerful, and advanced messaging platform. Perfect for enterprises aiming to enhance their communication capabilities with ease and sophistication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6">
+                        <img src="https://semoscloud.com/wp-content/uploads/2020/12/employee-experience-cloud.png" alt="Communication Strategy" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="title">Communication Strategy <i class="bi bi-diagram-3"></i></h2>
+                        <p>Radinet provides a seamless messaging experience, enabling your technicians to use the API for customized messages, scheduling sends, and managing message recipients efficiently. Elevate your communication strategy with our intuitive and powerful API.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="content-section bg-darker">
+            <div class="container">
+                <div class="row align-items-center g-5 animate-section">
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="https://semoscloud.com/wp-content/uploads/2020/12/employee-experience-cloud.png" alt="Advanced Capabilities" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="title">Advanced Capabilities <i class="bi bi-rocket-takeoff"></i></h2>
+                        <p>Radinet empowers enterprises to reach users anytime, anywhere with a comprehensive messaging platform. Our fully-featured API allows for advanced customization, ensuring your messages deliver impact and relevance in every send-out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        $(document).ready(function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Set initial states for all sections
+            gsap.set('.animate-section', { 
+                opacity: 1,
+                y: 0
+            });
+
+            // Animate sections that are already in view
+            $('.animate-section:in-viewport').each(function(i) {
+                gsap.from(this, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    delay: i * 0.2,
+                    ease: 'power2.out'
+                });
+            });
+
+            // Create scroll triggers for each section
+            $('.animate-section').each(function(i) {
+                gsap.from(this, {
+                    scrollTrigger: {
+                        trigger: this,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        toggleActions: 'play none none none',
+                        markers: false,
+                        onEnter: () => {
+                            gsap.to(this, {
+                                opacity: 1,
+                                y: 0,
+                                duration: 1,
+                                ease: 'power2.out'
+                            });
+                        }
+                    },
+                    opacity: 0,
+                    y: 50
+                });
+            });
+
+            // Rest of your existing animation code...
+        });
+    </script>
+</body>
+</html>

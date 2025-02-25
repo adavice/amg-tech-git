@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Clarity - AMG Tech</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        h2.title {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--highlight);
+        margin-bottom: 1.5rem;
+      }
+
+      h2.title i {
+        font-size: 24px;
+        color: var(--highlight);
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+        .page-content {
+            padding: 5rem 0;
+        }
+
+        .main-section {
+            width: 75%;
+            padding-right: 3rem;
+        }
+
+        .side-section {
+            width: 25%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .page-title {
+            color: var(--highlight);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "→";
+            color: var(--highlight);
+            position: absolute;
+            left: 0;
+        }
+
+        .side-card {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .side-card:last-child {
+            border-bottom: none;
+        }
+
+        .side-card h3 {
+            color: var(--highlight);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .side-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .side-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .side-card a {
+            color: var(--highlight);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .button {
+            background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+            border: 0;
+            font-weight: 200;
+            text-align: center;
+            display: block;
+            color: #fff;
+            padding: 20px 70px;
+            transition: box-shadow 0.5s;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: fit-content;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .main-section, .side-section {
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include header/navigation here if needed -->
+    
+    <main class="page-content">
+        <div class="content-wrapper">
+            <div class="main-section">
+                <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_3.png" 
+                     alt="Data Clarity" class="img-fluid mb-4">
+                
+                <h2 class="page-title title">Data Clarity<i class="bi bi-search"></i></h2>
+                
+                <!-- Introduction -->
+                <h2 class="section-title">Introduction</h2>
+                <p class="content-text">In today's data-rich environment, the ability to see through the noise and focus on what truly matters is paramount. Our system acts as a clarity engine, transforming overwhelming data volumes into clear, actionable insights that drive informed decision-making.</p>
+
+                <!-- Data Consolidation -->
+                <h2 class="section-title">Data Consolidation</h2>
+                <ul class="feature-list">
+                    <li>Centralized Data Repository: Unify data from multiple sources into a single, coherent view</li>
+                    <li>Automated Data Pipelines: Streamline the process of collecting and integrating data</li>
+                    <li>Data Cleansing: Automatically detect and correct inconsistencies and errors in your data</li>
+                    <li>Metadata Management: Maintain a clear understanding of data lineage and definitions</li>
+                </ul>
+
+                <!-- Noise Reduction -->
+                <h2 class="section-title">Noise Reduction</h2>
+                <ul class="feature-list">
+                    <li>Intelligent Filtering: Automatically highlight significant trends and anomalies</li>
+                    <li>Relevance Scoring: Prioritize data points based on their importance to key business metrics</li>
+                    <li>Outlier Detection: Identify and investigate unusual patterns or data points</li>
+                    <li>Signal Amplification: Enhance weak but important signals in your data for better visibility</li>
+                </ul>
+
+                <!-- Visual Clarity -->
+                <h2 class="section-title">Visual Clarity</h2>
+                <ul class="feature-list">
+                    <li>Intuitive Dashboards: Present complex data in easy-to-understand visual formats</li>
+                    <li>Interactive Visualizations: Allow users to explore data dynamically for deeper understanding</li>
+                    <li>Color Coding: Use intelligent color schemes to highlight important information</li>
+                    <li>Responsive Design: Ensure clarity across devices, from desktop to mobile</li>
+                </ul>
+
+                <a href="/c/index?page=sign_up" class="button">Get Started</a>
+            </div>
+
+            <div class="side-section">
+                <!-- IT Benefits Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_1.png" 
+                         alt="IT Benefits">
+                    <h3>IT Benefits</h3>
+                    <p class="content-text">Our system revolutionizes how IT professionals manage and leverage data across the enterprise.</p>
+                    <a href="/c/index?page=page7">Learn more →</a>
+                </div>
+
+                <!-- Analyst Benefits Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_2.png" 
+                         alt="Analyst Benefits">
+                    <h3>Analyst Benefits</h3>
+                    <p class="content-text">Empower your analysts with cutting-edge tools that turn raw data into actionable insights.</p>
+                    <a href="/c/index?page=page6">Learn more →</a>
+                </div>
+
+                <!-- System Analytics Card -->
+                <div class="side-card">
+                    <img src="https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_4.png" 
+                         alt="System Analytics">
+                    <h3>System Analytics</h3>
+                    <p class="content-text">Leverage cutting-edge algorithms and machine learning to anticipate trends and optimize operations.</p>
+                    <a href="/c/index?page=api">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts from main.html -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://adavice.github.io/amgtech.io/js/script.js"></script>
+    <script src="https://adavice.github.io/amgtech.io/js/popup.js"></script>
+    <script src="https://adavice.github.io/amgtech.io/js/mob_menu.js"></script>
+
+    <!-- GSAP Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.from(".page-content", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+    </script>
+
+    <!-- HubSpot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/143834685.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLYEWCTY0M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-DLYEWCTY0M");
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up - AMG Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+        }
+
+        .signup-section {
+            padding: 5rem 0;
+        }
+
+        .intro-text h1 {
+            display: none;
+        }
+
+        .intro-text p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .signup-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+
+        .form-control {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .form-control:focus {
+            background-color: transparent;
+            border-color: var(--highlight);
+            color: white;
+            box-shadow: none;
+        }
+
+        .form-select {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .form-select:focus {
+            background-color: transparent;
+            border-color: var(--highlight);
+            color: white;
+            box-shadow: none;
+        }
+
+        .form-select option {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        .button {
+            background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+            border: 0;
+            font-weight: 200;
+            text-align: center;
+            display: block;
+            color: #fff;
+            padding: 20px 64px;
+            transition: box-shadow 0.5s;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: fit-content;
+            margin: 30px auto 0;
+        }
+
+        .divider {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 2rem 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+
+        .button.button-google {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .login-link a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        h2.title {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h2.title i {
+            font-size: 24px;
+            color: var(--highlight);
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        .form-label {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="signup-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Intro Text -->
+                    <div class="intro-text text-center">
+                        <h2 class="title">Start Your Journey with AMG Tech <i class="bi bi-rocket-takeoff"></i></h2>
+                        <p>Join our platform and unlock the full potential of your enterprise analytics. Create your account to access powerful tools, seamless integration, and comprehensive insights.</p>
+                    </div>
+
+                    <!-- Signup Form -->
+                    <div class="signup-container">
+                        <h2 class="title">Account Details <i class="bi bi-person-plus"></i></h2>
+                        <form id="signupForm" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" name="fullName" 
+                                        placeholder="Enter your full name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="workEmail" class="form-label">Work Email</label>
+                                    <input type="email" class="form-control" id="workEmail" name="workEmail" 
+                                        placeholder="company@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="companyName" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="companyName" name="companyName" 
+                                        placeholder="Enter your company name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="employeeCount" class="form-label">Number of Employees</label>
+                                    <input type="number" class="form-control" id="employeeCount" name="employeeCount" 
+                                        placeholder="e.g., 50" min="1" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="industry" class="form-label">Industry</label>
+                                    <select class="form-select" id="industry" name="industry" required>
+                                        <option value="" selected disabled>Select your industry sector</option>
+                                        <option value="tech">Information Technology</option>
+                                        <option value="finance">Banking & Finance</option>
+                                        <option value="healthcare">Healthcare & Medical</option>
+                                        <option value="retail">Retail & E-commerce</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="education">Education</option>
+                                        <option value="consulting">Consulting</option>
+                                        <option value="telecom">Telecommunications</option>
+                                        <option value="media">Media & Entertainment</option>
+                                        <option value="transportation">Transportation & Logistics</option>
+                                        <option value="energy">Energy & Utilities</option>
+                                        <option value="construction">Construction</option>
+                                        <option value="agriculture">Agriculture</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="region" class="form-label">Region</label>
+                                    <select class="form-select" id="region" name="region" required>
+                                        <option value="" selected disabled>Select your business region</option>
+                                        <option value="na">North America</option>
+                                        <option value="eu">Europe</option>
+                                        <option value="asia">Asia Pacific</option>
+                                        <option value="latam">Latin America</option>
+                                        <option value="mea">Middle East & Africa</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button">Create Account</button>
+                            
+                            <div class="divider">OR</div>
+                            
+                            <button type="button" class="button button-google" onclick="handleGoogleSignup()">
+                                <i class="bi bi-google"></i>
+                                Sign up with Google
+                            </button>
+
+                            <div class="login-link">
+                                Already have an account? <a href="login.html">Log in</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate form elements
+            gsap.from('.intro-text', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: 'power2.out'
+            });
+
+            gsap.from('.signup-container', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.from('.form-control, .form-select', {
+                opacity: 0,
+                x: -20,
+                duration: 0.8,
+                stagger: 0.1,
+                delay: 0.5,
+                ease: 'power2.out'
+            });
+        });
+
+        function handleGoogleSignup() {
+            // Implement Google signup logic
+        }
+    </script>
+</body>
+</html>

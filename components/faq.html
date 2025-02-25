@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ - AMG Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Same root styles as api2.html */
+        :root {
+            --main-color: #181818;
+            --highlight: #ff9d00;
+        }
+
+        /* Same base styles */
+        body {
+            background-color: var(--main-color);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+        }
+
+        .faq-nav {
+            position: sticky;
+            top: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-height: calc(100vh - 40px); /* Limit height to viewport minus margins */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        /* Custom scrollbar styling */
+        .faq-nav::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .faq-nav::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+
+        .faq-nav::-webkit-scrollbar-thumb {
+            background: var(--highlight);
+            border-radius: 3px;
+        }
+
+        .faq-nav::-webkit-scrollbar-thumb:hover {
+            background: #ff8c00;
+        }
+
+        /* Firefox scrollbar */
+        .faq-nav {
+            scrollbar-width: thin;
+            scrollbar-color: var(--highlight) rgba(255,255,255,0.1);
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--highlight);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .faq-nav .nav-link {
+            color: rgba(255,255,255,0.7);
+            padding: 10px 15px;
+            border-left: 2px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: block;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .faq-nav .nav-link:hover,
+        .faq-nav .nav-link.active {
+            color: var(--highlight);
+            background: rgba(255,255,255,0.05);
+            border-left-color: var(--highlight);
+        }
+
+        .faq-section {
+            margin-bottom: 3rem;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            opacity: 0;
+        }
+
+        .faq-section h2 {
+            color: var(--highlight);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-section h2 i {
+            font-size: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-item:hover {
+            border-left-color: var(--highlight);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .faq-item h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Navigation Sidebar -->
+            <div class="col-lg-3">
+                <nav class="faq-nav">
+                    <!-- General -->
+                    <div class="nav-section">
+                        <div class="section-title">
+                            <i class="bi bi-info-circle"></i> Getting Started
+                        </div>
+                        <div class="nav flex-column">
+                            <a class="nav-link" href="#system">System Overview</a>
+                            <a class="nav-link" href="#integration">SaaS Integration</a>
+                            <a class="nav-link" href="#mobile">Mobile Usage</a>
+                        </div>
+                    </div>
+
+                    <!-- Security & Privacy -->
+                    <div class="nav-section">
+                        <div class="section-title">
+                            <i class="bi bi-shield-lock"></i> Security & Privacy
+                        </div>
+                        <div class="nav flex-column">
+                            <a class="nav-link" href="#security">Data Security</a>
+                            <a class="nav-link" href="#privacy">Data Privacy</a>
+                            <a class="nav-link" href="#compliance">Compliance Standards</a>
+                        </div>
+                    </div>
+
+                    <!-- Platform Features -->
+                    <div class="nav-section">
+                        <div class="section-title">
+                            <i class="bi bi-gear"></i> Platform Features
+                        </div>
+                        <div class="nav flex-column">
+                            <a class="nav-link" href="#usage">Platform Usage</a>
+                            <a class="nav-link" href="#files">File Management</a>
+                            <a class="nav-link" href="#support">Support & Training</a>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="nav-section">
+                        <div class="section-title">
+                            <i class="bi bi-building"></i> Enterprise
+                        </div>
+                        <div class="nav flex-column">
+                            <a class="nav-link" href="#enterprise">Enterprise Features</a>
+                            <a class="nav-link" href="#customization">Customization</a>
+                            <a class="nav-link" href="#scalability">Scalability</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <!-- Getting Started Section -->
+                <section id="system" class="faq-section">
+                    <h2><i class="bi bi-info-circle"></i> System Overview</h2>
+                    <div class="faq-item">
+                        <h3>What is AMGTECH PLUS and how does it work?</h3>
+                        <p>AMGTECH PLUS is a comprehensive communication platform designed to facilitate seamless messaging and collaboration. It works by integrating with your existing SaaS tools to provide a unified messaging experience.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can I get started with AMGTECH PLUS?</h3>
+                        <p>Getting started is simple. Create an account, choose your integration preferences, and follow our guided setup process to begin using the platform.</p>
+                    </div>
+                </section>
+
+                <section id="integration" class="faq-section">
+                    <h2><i class="bi bi-box-arrow-in-down"></i> SaaS Integration</h2>
+                    <div class="faq-item">
+                        <h3>How does AMGTECH PLUS integrate with existing systems?</h3>
+                        <p>Integration can be done through our API or by using pre-built connectors available in our marketplace. Simply navigate to the integration settings and follow the instructions for each application.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Which platforms are supported?</h3>
+                        <p>We support integration with major SaaS platforms including CRM systems, messaging services, and business management tools.</p>
+                    </div>
+                </section>
+
+                <section id="mobile" class="faq-section">
+                    <h2><i class="bi bi-phone"></i> Mobile Usage</h2>
+                    <div class="faq-item">
+                        <h3>Is AMGTECH PLUS available on mobile devices?</h3>
+                        <p>Yes, AMGTECH PLUS is fully optimized for mobile use with native apps for both iOS and Android platforms. Our mobile applications offer the same robust features as our desktop version.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do push notifications work on mobile?</h3>
+                        <p>Mobile users receive real-time push notifications for messages, updates, and important alerts. Notification preferences can be customized in the app settings to suit your needs.</p>
+                    </div>
+                </section>
+
+                <!-- Security & Privacy Section -->
+                <section id="security" class="faq-section">
+                    <h2><i class="bi bi-shield-lock"></i> Data Security</h2>
+                    <div class="faq-item">
+                        <h3>How is my data protected?</h3>
+                        <p>We use enterprise-grade encryption, secure data centers, and follow industry best practices for data protection. All data is encrypted both in transit and at rest.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What security certifications do you have?</h3>
+                        <p>AMGTECH PLUS maintains ISO 27001 certification and complies with GDPR, HIPAA, and other relevant security standards.</p>
+                    </div>
+                </section>
+
+                <section id="privacy" class="faq-section">
+                    <h2><i class="bi bi-lock"></i> Data Privacy</h2>
+                    <div class="faq-item">
+                        <h3>How is my data protected?</h3>
+                        <p>We use enterprise-grade encryption, secure data centers, and follow industry best practices for data protection. All data is encrypted both in transit and at rest.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What security certifications do you have?</h3>
+                        <p>AMGTECH PLUS maintains ISO 27001 certification and complies with GDPR, HIPAA, and other relevant security standards.</p>
+                    </div>
+                </section>
+
+                <section id="compliance" class="faq-section">
+                    <h2><i class="bi bi-check-circle"></i> Compliance Standards</h2>
+                    <div class="faq-item">
+                        <h3>Which compliance standards do you meet?</h3>
+                        <p>AMGTECH PLUS complies with GDPR, HIPAA, SOC 2, and other major data protection and privacy regulations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you handle data residency requirements?</h3>
+                        <p>We offer regional data hosting options to meet specific data residency requirements and compliance needs.</p>
+                    </div>
+                </section>
+
+                <!-- Platform Features Section -->
+                <section id="usage" class="faq-section">
+                    <h2><i class="bi bi-gear"></i> Platform Usage</h2>
+                    <div class="faq-item">
+                        <h3>Are there any usage limitations?</h3>
+                        <p>Our system is designed to scale with your needs. While basic plans have some limitations, enterprise plans offer unlimited usage capabilities.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you handle large file transfers?</h3>
+                        <p>Files up to 2GB can be transferred securely through our platform, with enterprise plans supporting even larger transfers.</p>
+                    </div>
+                </section>
+
+                <section id="files" class="faq-section">
+                    <h2><i class="bi bi-file-earmark"></i> File Management</h2>
+                    <div class="faq-item">
+                        <h3>Are there any usage limitations?</h3>
+                        <p>Our system is designed to scale with your needs. While basic plans have some limitations, enterprise plans offer unlimited usage capabilities.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you handle large file transfers?</h3>
+                        <p>Files up to 2GB can be transferred securely through our platform, with enterprise plans supporting even larger transfers.</p>
+                    </div>
+                </section>
+
+                <section id="support" class="faq-section">
+                    <h2><i class="bi bi-headset"></i> Support & Training</h2>
+                    <div class="faq-item">
+                        <h3>What kind of support is available?</h3>
+                        <p>We offer 24/7 technical support, dedicated account managers for enterprise clients, and comprehensive documentation resources.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can I get training for my team?</h3>
+                        <p>We provide online training sessions, video tutorials, and custom training programs for enterprise customers.</p>
+                    </div>
+                </section>
+
+                <!-- Enterprise Section -->
+                <section id="enterprise" class="faq-section">
+                    <h2><i class="bi bi-building"></i> Enterprise Features</h2>
+                    <div class="faq-item">
+                        <h3>What features are exclusive to enterprise users?</h3>
+                        <p>Enterprise users benefit from advanced analytics, dedicated support, custom integrations, unlimited storage, and enhanced security features including SSO and custom data retention policies.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does enterprise-level support work?</h3>
+                        <p>Enterprise clients receive 24/7 priority support, dedicated account managers, custom training programs, and guaranteed response times for critical issues.</p>
+                    </div>
+                </section>
+
+                <section id="customization" class="faq-section">
+                    <h2><i class="bi bi-sliders"></i> Customization</h2>
+                    <div class="faq-item">
+                        <h3>Can we customize the platform interface?</h3>
+                        <p>Yes, enterprise customers can customize the interface with their branding, create custom workflows, and configure unique user roles and permissions to match their organizational structure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What integration options are available?</h3>
+                        <p>We offer custom API integration, pre-built connectors for popular enterprise software, and the ability to develop custom modules specific to your business needs.</p>
+                    </div>
+                </section>
+
+                <section id="scalability" class="faq-section">
+                    <h2><i class="bi bi-graph-up-arrow"></i> Scalability</h2>
+                    <div class="faq-item">
+                        <h3>How does AMGTECH PLUS handle scaling?</h3>
+                        <p>Our platform is built on a cloud-native architecture that automatically scales to handle increased loads. Whether you have 10 or 10,000 users, performance remains consistent.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What are the infrastructure requirements?</h3>
+                        <p>As a cloud-based solution, AMGTECH PLUS requires minimal on-premise infrastructure. We handle all scaling, updates, and maintenance through our secure cloud infrastructure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does the platform handle increased user load?</h3>
+                        <p>Our cloud-native architecture automatically scales to handle growing demands. The system uses dynamic resource allocation to maintain consistent performance whether you have 10 or 10,000 users.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What are the storage limits?</h3>
+                        <p>Enterprise plans include unlimited storage with automatic scaling. Data is distributed across multiple secure data centers for optimal performance and reliability.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you handle peak usage periods?</h3>
+                        <p>Our load balancing system automatically distributes traffic across multiple servers to prevent bottlenecks and ensure smooth operation during high-demand periods.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is there a limit to concurrent users?</h3>
+                        <p>Enterprise plans support unlimited concurrent users. Our infrastructure scales horizontally to accommodate your organization's growth without compromising performance.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Cache DOM elements
+            const sections = document.querySelectorAll('.faq-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let isScrolling = false;
+            
+            // Initial setup for sections
+            sections.forEach(section => {
+                gsap.set(section, { 
+                    opacity: 0,
+                    y: 30
+                });
+                
+                // Create scroll trigger for each section
+                gsap.to(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'power2.out'
+                });
+            });
+
+            // Throttled scroll handler
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            }
+
+            // Update active nav state
+            function updateNav() {
+                if (isScrolling) return;
+
+                const scrollPosition = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Smooth scroll with better performance
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    isScrolling = true;
+
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const targetPosition = targetSection.offsetTop - 50;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Update active state immediately
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Reset scroll flag after animation
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 800);
+                    }
+                });
+            });
+
+            // Add throttled scroll listener
+            window.addEventListener('scroll', throttle(updateNav, 100));
+
+            // Initial nav state
+            updateNav();
+        });
+    </script>
+</body>
+</html>
