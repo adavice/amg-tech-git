@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - AMG Tech</title>
-	<link rel="stylesheet" href="./styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -43,6 +42,161 @@
 			padding-left: 64px;
         }
     </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <style>
+            :root {
+                --main-color: #181818;
+                --highlight: #ff9d00;
+            }
+    
+            body {
+                background-color: var(--main-color);
+                color: white;
+                font-family: 'Poppins', sans-serif;
+                overflow-x: hidden;
+            }
+            h2.title {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+          }
+    
+          h2.title i {
+            font-size: 24px;
+            color: var(--highlight);
+            vertical-align: middle;
+            margin-left: 8px;
+          }
+            .page-content {
+                padding: 5rem 0;
+            }
+            h5.card-title {
+                color: #fff;
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+    
+            .main-section {
+                width: 75%;
+                padding-right: 3rem;
+            }
+    
+            .side-section {
+                width: 25%;
+                background: rgba(255,255,255,0.05);
+                border-radius: 12px;
+                padding: 2rem;
+            }
+    
+            .content-wrapper {
+                display: flex;
+                gap: 2rem;
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+    
+            .page-title {
+                color: var(--highlight);
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+    
+            .section-title {
+                color: var(--highlight);
+                font-size: 1.5rem;
+                margin: 2rem 0 1rem;
+            }
+    
+            .content-text {
+                color: rgba(255,255,255,0.8);
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+    
+            .feature-list {
+                list-style: none;
+                padding-left: 0;
+            }
+    
+            .feature-list li {
+                color: rgba(255,255,255,0.8);
+                margin-bottom: 0.8rem;
+                padding-left: 1.5rem;
+                position: relative;
+            }
+    
+            .feature-list li:before {
+                content: "→";
+                color: var(--highlight);
+                position: absolute;
+                left: 0;
+            }
+    
+            .side-card {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+    
+            .side-card:last-child {
+                border-bottom: none;
+            }
+    
+            .side-card h3 {
+                color: var(--highlight);
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+    
+            .side-card img {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                transition: transform 0.3s ease;
+            }
+    
+            .side-card img:hover {
+                transform: scale(1.05);
+            }
+    
+            .side-card a {
+                color: var(--highlight);
+                text-decoration: none;
+                font-size: 0.9rem;
+            }
+    
+            .button {
+                background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+                border: 0;
+                font-weight: 200;
+                text-align: center;
+                display: block;
+                color: #fff;
+                padding: 20px 70px;
+                transition: box-shadow 0.5s;
+                cursor: pointer;
+                font-size: 16px;
+                text-transform: uppercase;
+                text-decoration: none;
+                width: fit-content;
+                margin: 2rem 0;
+            }
+    
+            @media (max-width: 768px) {
+                .content-wrapper {
+                    flex-direction: column;
+                }
+                .main-section, .side-section {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+        </style>
 </head>
 <body>
     <main>
@@ -131,7 +285,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <img src="./img/team.jpg" alt="Our Team" class="img-fluid rounded shadow">
+                        <img src="../img/team.jpg" alt="Our Team" class="img-fluid rounded shadow">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-4 title">Get your free Consultation today</h2>
