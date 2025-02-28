@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Amg Tech</title>
-
+<link rel="stylesheet" href="./styles.css">
     <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,23 +51,24 @@
       }
 
       .button {
-        background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png")
-          no-repeat;
-        border: 0;
-        font-weight: 200;
-        text-align: center;
-        display: block;
-        color: #fff;
-        padding: 20px 0;
-        margin-left: auto;
-        margin-top: 30px;
-        transition: box-shadow 0.5s;
-        cursor: pointer;
-        margin-left: 0;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
+    background: url(https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png) no-repeat;
+    border: 0;
+    font-weight: 200;
+    text-align: center;
+    display: block;
+    color: #fff;
+    padding: 18px 0;
+    margin-left: auto;
+    margin-top: 30px;
+    transition: box-shadow 0.5s;
+    cursor: pointer;
+    margin-left: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-left: 70px;
+    font-weight: 400;
+    text-decoration: none;
+}
       .land__overlay {
         position: absolute;
         z-index: -1;
@@ -79,10 +80,7 @@
         opacity: 50%;
         background-size: cover;
       }
-      .hero {
-        width: 100%;
-        height: calc(100vh - 170px);
-      }
+
       .custom-video-container video {
         width: auto;
         height: 100%;
@@ -119,7 +117,7 @@
         width: 100%;
         position: relative;
         overflow: hidden;
-        height: calc(100vh - 170px);
+        min-height: calc(100vh - 67px);
       }
 
       .hero h1 {
@@ -296,19 +294,112 @@
           justify-content: center;
         }
       }
+
+      .primary-btn {
+        background: url("https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png") no-repeat;
+        transition: transform 0.3s ease;
+      }
+
+      .secondary-btn {
+        background: transparent;
+        border: 2px solid var(--highlight);
+        padding: 18px 64px;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .secondary-btn:hover {
+        background: var(--highlight);
+        color: var(--main-color);
+      }
+
+      .display-4 {
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .text-muted {
+        color: rgba(255,255,255,0.6) !important;
+      }
+
+      /* Update hero styles */
+      .hero h1 {
+        font-size: 42px;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero h3 {
+        font-size: 28px;
+        margin: 1rem 0;
+      }
+
+      /* Update responsive styles */
+      @media (max-width: 980px) {
+        .hero {
+          padding-top: 2rem;
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+          margin-bottom: 1rem;
+        }
+
+        .hero h3 {
+          font-size: 24px;
+          margin: 1rem 0;
+        }
+
+        .hero .button {
+          width: 100%;
+          max-width: 280px;
+          margin: 1rem auto;
+        }
+
+        .d-flex.gap-3 {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .custom-video-container {
+          margin-top: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero h3 {
+          font-size: 20px;
+        }
+
+        .hero {
+          padding: 1rem 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Hero Section -->
-    <section class="hero main_page vh-100 d-flex align-items-center">
-      <div class="container">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h1 class="display-4 mb-3">Gateway to analytics and insights</h1>
-            <h3 class="h2 mb-4">Provided by SAAS, powered by AI</h3>
-            <a class="button mx-auto" href="/c/index?page=sign_up"
-              >Create Account</a
-            >
+    <section class="hero main_page d-flex align-items-center">
+      <div class="container mt-3">
+        <div class="row justify-content-center align-items-center text-center g-4">
+          <div class="col-lg-6">
+            <div class="hero-content px-2">
+              <h1 class="display-4 mb-4">Transform Your Data into <span style="color: var(--highlight);">Actionable Insights</span></h1>
+              <h3 class="h2 mb-5">Unlock the Power of AI-Driven Analytics Today</h3>
+              <div class="d-flex gap-3 justify-content-center">
+                <a class="button primary-btn" href="/c/index?page=signup">Start Free Trial</a>
+              </div>
+              <p class="mt-3 text-muted small">No credit card required • 14-day free trial</p>
+            </div>
           </div>
           <div class="col-lg-6">
             <div class="custom-video-container mx-auto">
@@ -357,7 +448,7 @@
               accommodating growing volumes. Experience significant time savings
               in data preparation and management, allowing your team to focus on
               strategic initiatives that drive innovation.
-              <a class="button" id="one" href="/c/index?page=page7"
+              <a class="button" id="one" href="/c/index?page=it_benefits"
                 ><span>Read more about IT benefits</span>
               </a>
             </p>
@@ -393,7 +484,7 @@
               capabilities, you can drill down into the details or zoom out for
               a big-picture view, enhancing your ability to deliver actionable
               insights to stakeholders.
-              <a class="button" id="two_1" href="/c/index?page=page6"
+              <a class="button" id="two_1" href="/c/index?page=analyst_benefits"
                 ><span>Read more about Analyst benefits</span></a
               >
             </p>
@@ -428,7 +519,7 @@
               trends, monitoring operational efficiency, or forecasting
               financial performance, our solution provides the clarity you need
               to navigate complex business challenges with confidence.
-              <a class="button" id="three" href="/c/index?page=page6"
+              <a class="button" id="three" href="/c/index?page=data_clarity"
                 ><span>Read more about Data Clarity</span></a
               >
             </p>
@@ -462,7 +553,7 @@
               emerging market opportunities to optimizing supply chain
               operations, our analytics capabilities give you the edge in
               today's competitive business environment.
-              <a class="button" id="four_1" href="/c/index?page=api"
+              <a class="button" id="four_1" href="/c/index?page=system_analytics"
                 ><span>Read more about System Analytics</span></a
               >
             </p>
@@ -497,7 +588,7 @@
               barriers, our system fosters a culture of data-driven
               decision-making, empowering your entire organization to act on
               insights quickly and confidently.
-              <a class="button" id="five" href="/c/index?page=api"
+              <a class="button" id="five" href="/c/index?page=collab_features"
                 ><span>Read more about Collaboration Features</span></a
               >
             </p>

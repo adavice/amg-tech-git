@@ -1,16 +1,9 @@
 <footer>
   <style>
     :root {
-      --main-color: #292929;
-      --highlight: #ff9d00;
-      --highlight2: #fff402;
-      --highlight-grad: linear-gradient(
-        to right,
-        var(--highlight2),
-        var(--highlight)
-      );
-      --darker: #202025;
-    }
+    --highlight: #ff9d00;
+    --main-color: #181818;
+}
     footer {
       background-image: linear-gradient(to right, #111111, #111111);
       color: #fff;
@@ -20,22 +13,6 @@
       opacity: 0.99;
       font-family: Poppins, Arial, sans-serif;
     }
-    .button {
-    background: url(https://raw.githubusercontent.com/adavice/amg-tech-git/main/img/top1_6.png) no-repeat;
-    border: 0;
-    font-weight: 200;
-    text-align: center;
-    display: block;
-    color: #fff;
-    padding: 22px 0;
-    margin-left: auto;
-    margin-top: 30px;
-    transition: box-shadow 0.5s;
-    cursor: pointer;
-    margin-left: 0;
-    font-size: 16px;
-    text-transform: uppercase;
-}
     .leftblock {
       position: relative;
       left: 0;
@@ -66,6 +43,12 @@
       gap: 5px;
     }
 
+    .rightblock > span {
+      color: var(--highlight);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
     .rightblock a {
       color: #fff;
       transition: color 0.3s;
@@ -78,6 +61,7 @@
 
     .rightblock a:hover {
       color: var(--highlight) !important;
+      text-decoration: none;
     }
 
     footer .wrapper {
@@ -173,68 +157,38 @@
         /></a>
       </div>
     </div>
+
     <div class="rightblock">
-      Platform
-      <a href="/c/index?page=main">Main Page</a>
-      <a href="/c/index?page=amgtech_api">AMGTech API</a>
-      <a href="/c/index?page=amgtech_plus">AMGTech PLUS</a>
-      <a href="/c/index?page=FAQ">FAQ</a>
-      <a href="/c/index?page=blog">Blog</a>
-      <a href="/c/index?page=developer_sign">Developers</a>
-      <a href="/c/index?page=login">login</a>
+      <span>Products</span>
+      <a href="/c/index?page=api">Amg Tech API</a>
     </div>
 
     <div class="rightblock">
-      Technical
-      <a href="/c/index?page=sign_up">Sign Up</a>
-      <a href="/c/index?page=amgtech_plus">On board</a>
-      <a href="/c/index?page=page3">API capability</a>
-      <a href="/c/index?page=developer_sign">Developers Sign-UP</a>
-
-      <a href="/c/index?page=FAQ">API Documentation</a>
+      <span>API</span>
+      <a href="/c/index?page=api">API Overview</a>
+      <a href="/c/index?page=api_documentation">Documentation</a>
     </div>
 
     <div class="rightblock">
-      Company
-      <a href="/c/index?page=career">Careers</a>
-      <a href="/c/index?page=career">Open positions</a>
-      <a href="/c/index?page=press">Press</a>
+      <span>Quick Links</span>
+      <a href="/c/index?page=faq">FAQ</a>
+      <a href="/c/index?page=contact">Support</a>
       <a href="/c/index?page=about">About Us</a>
-      <a href="/c/index?page=contact">Contact</a>
-      <a href="/c/index?page=developer_sign">Developers Sign-UP</a>
+      <a href="/c/index?page=careers">Career</a>
+      <a href="/c/index?page=login">Login</a>
+    </div>
+
+    <div class="rightblock">
+      <span>Get Started</span>
+      <a href="/c/index?page=signup">Sign Up</a>
+      <a href="/c/index?page=developer_signup">Developers</a>
       <a href="/c/index?page=policy">Privacy Policy</a>
       <a href="/c/index?page=terms">Terms & Conditions</a>
     </div>
-
-    <div class="rightblock">
-      Contact
-      <a href="/c/index?page=sitemap">Site Map</a>
-      <a href="https://www.linkedin.com/company/AMGTECH">linkedin</a>
-      <a href="/c/index?page=contact">Contact</a>
-      <a
-        href="mailto:support@amgtech.io?subject=Subject%20Line&body=Content%20of%20the%20email."
-        >Sales email</a
-      >
-      <a
-        href="mailto:support@amgtech.io?subject=Subject%20Line&body=Content%20of%20the%20email."
-        >Support email</a
-      >
-      <a
-        href="mailto:support@amgtech.io?subject=Subject%20Line&body=Content%20of%20the%20email."
-        >Info email</a
-      >
-    </div>
-
-    <div class="social" style="display: none">
-      <a href="https://www.linkedin.com/company/AMGTECH"
-        ><img src="/img/icons/linkedin.png" alt=""
-      /></a>
-    </div>
   </div>
 
-  <div></div>
   <div class="social">
-    <a class="button" style="width: 270px" href="/c/index?page=sign_up"
+    <a class="button" style="width: 270px" href="/c/index?page=signup"
       ><span style="color: #fff">Create Account</span></a
     >
   </div>
