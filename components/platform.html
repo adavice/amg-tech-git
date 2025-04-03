@@ -407,6 +407,12 @@
       .popup-notification.success .popup-title {
         color: #28a745;
       }
+
+      @media (max-width: 768px) {
+        .graph-container {
+          padding: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -492,9 +498,9 @@
             Analyze the following graph data and provide insights:
             Labels: ${graphData.labels.join(', ')}
             Datasets:
-            ${graphData.datasets.map(dataset => `
-                - ${dataset.label}: ${dataset.data.join(', ')}
-            `).join('\n')}
+            ${graphData.datasets.map(dataset => 
+                `- ${dataset.label}: ${dataset.data.join(', ')}`
+            ).join('\n')}
         `;
 
         try {
@@ -597,14 +603,21 @@
     }
 
     function processExcelData(jsonData) {
-        // Assuming first row contains headers and first column contains dates/labels
-        const headers = jsonData[0].slice(1); // Remove first column header
-        const labels = jsonData.slice(1).map(row => row[0]); // Get labels from first column
-        
-        // Create datasets for each column
+        // Extract headers excluding the first column (dates)
+        const headers = jsonData[0].slice(1);
+
+        // Extract ONLY the first column value for each row for x-axis labels
+        const dates = jsonData.slice(1).map(row => {
+            if (!row || !row.length) return '';
+            // Take ONLY the first cell value from each row
+            const firstCellValue = row[0];
+            // Remove any trailing numbers or unwanted data, only keep the first value
+            return String(firstCellValue).split(/[\s,]+/)[0];
+        }).filter(Boolean); // Remove any empty values
+
+        // Create datasets for each numeric column
         const datasets = headers.map((header, index) => {
             const columnData = jsonData.slice(1).map(row => row[index + 1] || 0);
-            
             return {
                 label: header,
                 data: columnData,
@@ -616,7 +629,7 @@
         });
 
         return {
-            labels: labels,
+            labels: dates,  // Only use first column values as labels
             datasets: datasets
         };
     }
@@ -667,7 +680,11 @@
                             color: 'rgba(255, 255, 255, 0.1)'
                         },
                         ticks: {
-                            color: 'rgba(255, 255, 255, 0.8)'
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            callback: function(value, index) {
+                                // Only return the date labels
+                                return data.labels[index];
+                            }
                         }
                     }
                 }
