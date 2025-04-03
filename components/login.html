@@ -198,10 +198,39 @@
                 delay: 0.5,
                 ease: 'power2.out'
             });
+
+            // Add form submission handler
+            document.getElementById('home-option1-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('home-option1-email-input').value;
+                const password = document.getElementById('home-option1-password-input').value;
+                const remember = document.getElementById('rememberMe').checked;
+
+                // Handle login
+                handleLogin(email, password, remember);
+            });
         });
 
+        async function handleLogin(email, password, remember) {
+            try {
+                // Your login API call here
+                // const response = await fetch('/api/login', {...})
+                
+                // After successful login:
+                const redirectUrl = sessionStorage.getItem('redirectAfterLogin') || '/c/index?page=platform';
+                sessionStorage.removeItem('redirectAfterLogin'); // Clean up
+                window.location.href = redirectUrl;
+            } catch (error) {
+                console.error('Login failed:', error);
+                // Handle login error
+            }
+        }
+
         function handleGoogleLogin() {
-            // Google login logic
+            // Store redirect URL before Google login
+            sessionStorage.setItem('redirectAfterLogin', '/c/index?page=platform');
+            // Your Google login logic
         }
     </script>
 </body>

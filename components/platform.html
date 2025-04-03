@@ -542,6 +542,15 @@
             return;
         }
 
+        // // Check if user is logged in
+        // const isLoggedIn = checkUserSession(); // You'll need to implement this based on your auth system
+        // if (!isLoggedIn) {
+        //     // Save current state if needed
+        //     sessionStorage.setItem('redirectAfterLogin', '/c/index?page=platform');
+        //     window.location.href = '/c/index?page=signup';
+        //     return;
+        // }
+
         const fileExt = file.name.split('.').pop().toLowerCase();
         if (!['xlsx', 'xls'].includes(fileExt)) {
             showPopup('Error', 'Please upload only Excel files (.xlsx or .xls)', 'error');
