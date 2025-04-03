@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amg Tech</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/amgtech.io/favicon.png" type="image/png" />
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <!-- Ensure Bootstrap JavaScript is included -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .upload-section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border: 2px dashed var(--highlight);
+        border-radius: 8px;
+        text-align: center;
+        margin: 2rem;
+      }
+
+      .upload-section h3 {
+        color: var(--highlight);
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+
+      .graph-container {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 12px;
+        padding: 2rem;
+        width: 100%;
+        height: 400px;
+        padding-bottom: 50px;
+        margin: 2rem 0;
+      }
+
+      .chat-container {
+        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        height: 300px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        resize: vertical;
+        overflow: hidden;
+        min-height: 300px;
+        max-height: 80vh;
+      }
+
+      .chat-container::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        cursor: se-resize;
+        background: linear-gradient(
+            135deg,
+            transparent 50%,
+            var(--highlight) 50%
+        );
+        border-bottom-right-radius: 12px;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      }
+
+      .chat-container:hover::after {
+        opacity: 1;
+      }
+
+      .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-height: 100px;
+      }
+
+      .chat-input {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-primary {
+        background-color: var(--highlight) !important;
+        border-color: var(--highlight) !important;
+        color: var(--main-color) !important;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .btn-primary:hover {
+        opacity: 0.9;
+      }
+
+      .alert-primary {
+        background: rgba(255, 157, 0, 0.1);
+        border-color: var(--highlight);
+        color: #fff;
+      }
+
+      .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      .form-control:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: var(--highlight);
+        color: #fff;
+        box-shadow: 0 0 0 0.25rem rgba(255, 157, 0, 0.25);
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Custom scrollbar */
+      .chat-messages::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .chat-messages::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .chat-messages::-webkit-scrollbar-thumb {
+        background: var(--highlight);
+        border-radius: 3px;
+      }
+
+      .upload-section {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border: 2px dashed var(--highlight);
+        border-radius: 8px;
+        text-align: center;
+        margin: 2rem;
+        max-width: 450px;
+        margin: auto;
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        margin: 0.25rem 0;
+      }
+
+      .user-message {
+        background: rgba(255, 157, 0, 0.1);
+        border: 1px solid var(--highlight);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 0.25rem;
+      }
+
+      .ai-message {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        align-self: flex-start;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      .analysis-container {
+        display: flex;
+        gap: 2rem;
+        margin: 2rem 0;
+        overflow: hidden; /* Add this to prevent horizontal overflow */
+      }
+
+      .upload-section {
+        flex: 0 0 350px;
+        margin: 0;
+        height: fit-content;
+        transition: all 0.3s ease, flex 0.3s ease; /* Add flex to transition */
+      }
+
+      .upload-section.hidden {
+        flex: 0 0 0; /* Collapse to zero width */
+        width: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        overflow: hidden;
+        display: block; /* Change from none to block */
+      }
+
+      .graph-section {
+        flex: 1;
+        position: relative;
+        min-width: 0; /* Add this to prevent flex item overflow */
+        transition: all 0.3s ease;
+      }
+
+      .graph-container {
+        margin: 0;
+        transition: all 0.3s ease;
+        width: 100%; /* Ensure container takes full width */
+        max-width: 100%; /* Prevent overflow */
+      }
+
+      .toggle-graph {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--highlight);
+        color: var(--highlight);
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-graph:hover {
+        background: var(--highlight);
+        color: var(--main-color);
+      }
+
+      .graph-section.hidden .graph-container {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .toggle-upload {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--highlight);
+        color: var(--highlight);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-upload:hover {
+        background: var(--highlight);
+        color: var(--main-color);
+      }
+
+      .upload-section {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .upload-section.hidden {
+        width: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        overflow: hidden;
+        display: none;
+      }
+
+      .reveal-upload {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--highlight);
+        color: var(--highlight);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .toggle-upload, .reveal-upload {
+        padding: 0.2rem 0.4rem;
+      }
+
+      .reveal-upload:hover {
+        background: var(--highlight);
+        color: var(--main-color);
+      }
+
+      .reveal-upload.visible {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+
+      .graph-section {
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 980px) {
+        .analysis-container {
+          flex-direction: column;
+        }
+
+        .upload-section {
+          flex: none;
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      /* Popup Styles */
+      .popup-notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        max-width: 350px;
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid var(--highlight);
+        border-radius: 8px;
+        padding: 1rem;
+        z-index: 1000;
+        transform: translateX(120%);
+        transition: transform 0.3s ease;
+      }
+
+      .popup-notification.show {
+        transform: translateX(0);
+      }
+
+      .popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .popup-title {
+        color: var(--highlight);
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .popup-close {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+
+      .popup-content {
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+
+      .progress-bar {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: var(--highlight);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      .popup-notification.error {
+        border-color: #dc3545;
+      }
+
+      .popup-notification.error .popup-title {
+        color: #dc3545;
+      }
+
+      .popup-notification.success {
+        border-color: #28a745;
+      }
+
+      .popup-notification.success .popup-title {
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h2 class="title text-center mb-5">
+        Data Analysis Platform <i class="bi bi-graph-up-arrow"></i>
+      </h2>
+      
+      <!-- Analysis Section -->
+      <div class="analysis-container">
+        <!-- File Upload Section -->
+        <div class="upload-section" id="uploadSection">
+          <button class="toggle-upload" onclick="toggleUpload()" title="Hide Upload Panel">
+            <i class="bi bi-arrow-left-circle"></i>
+          </button>
+          <h3>Upload Excel File</h3>
+          <p class="text-white small mb-3">
+            Upload your Excel file (.xlsx, .xls) containing sales or revenue data. 
+            The file should have dates in the first column and numerical values in subsequent columns.
+          </p>
+          <input
+            type="file"
+            class="form-control"
+            id="excelFile"
+            accept=".xlsx, .xls"
+          />
+          <button class="btn btn-primary mt-3" onclick="uploadFile()" title="Process Selected Excel File">
+            Upload and Process
+          </button>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="graph-section" id="graphSection">
+          <div class="reveal-upload" onclick="toggleUpload()" title="Show Upload Panel">
+            <i class="bi bi-cloud-upload"></i>
+          </div>
+          <div id="dynamicGraphsContainer"></div>
+        </div>
+      </div>
+
+      <!-- Chat Section -->
+      <div class="chat-container" id="chatContainer">
+        <div class="chat-messages" id="chatMessages">
+          <!-- Messages will be inserted here -->
+        </div>
+        <div class="chat-input">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="messageInput"
+              placeholder="Type your message..."
+            />
+            <button class="btn btn-primary" onclick="sendMessage()">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-notification" id="popup">
+      <div class="popup-header">
+        <h5 class="popup-title">Upload Status</h5>
+        <button class="popup-close" onclick="closePopup()">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="popup-content" id="popupContent"></div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+    </div>
+
+    <script>
+      let chart = null;
+      let dynamicGraphCount = 0;
+      let uploadedData = null;  // Will store the most recently processed data
+
+      async function analyzeGraphWithChatGPT(graphData) {
+        const apiKey = 'your-openai-api-key'; // Replace with your OpenAI API key
+        const prompt = `
+            Analyze the following graph data and provide insights:
+            Labels: ${graphData.labels.join(', ')}
+            Datasets:
+            ${graphData.datasets.map(dataset => `
+                - ${dataset.label}: ${dataset.data.join(', ')}
+            `).join('\n')}
+        `;
+
+        try {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: 'gpt-4', // Use 'gpt-4' or 'gpt-3.5-turbo'
+                    messages: [{ role: 'user', content: prompt }],
+                    max_tokens: 500
+                })
+            });
+
+            const data = await response.json();
+            if (data.choices && data.choices.length > 0) {
+                const analysis = data.choices[0].message.content;
+                displayChatGPTResponse(analysis);
+            } else {
+                displayChatGPTResponse('No response received from AMGtech.');
+            }
+        } catch (error) {
+            console.error('Error communicating with AMGtech:', error);
+            displayChatGPTResponse('An error occurred while analyzing the graph.');
+        }
+    }
+
+    function displayChatGPTResponse(response) {
+        const chatMessages = document.getElementById('chatMessages');
+        const aiMessageElement = document.createElement('div');
+        aiMessageElement.className = 'message ai-message';
+        aiMessageElement.textContent = response;
+        chatMessages.appendChild(aiMessageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function uploadFile() {
+        const fileInput = document.getElementById("excelFile");
+        const file = fileInput.files[0];
+
+        if (!file) {
+            showPopup('Error', 'Please select a file first', 'error');
+            return;
+        }
+
+        const fileExt = file.name.split('.').pop().toLowerCase();
+        if (!['xlsx', 'xls'].includes(fileExt)) {
+            showPopup('Error', 'Please upload only Excel files (.xlsx or .xls)', 'error');
+            fileInput.value = '';
+            return;
+        }
+
+        showPopup('Processing', 'Reading Excel file...');
+        updateProgress(20);
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                updateProgress(50);
+
+                const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+                
+                if (jsonData.length < 2) {
+                    throw new Error('Excel file is empty or has insufficient data');
+                }
+
+                updateProgress(80);
+                const chartData = processExcelData(jsonData);
+                createNewChart(chartData);
+                
+                updateProgress(100);
+                showPopup('Success', 'Data visualization ready!', 'success');
+                
+                // Reset file input for next use
+                fileInput.value = '';
+                
+                // Analyze with ChatGPT
+                analyzeGraphWithChatGPT(chartData);
+            } catch (error) {
+                showPopup('Error', error.message, 'error');
+                console.error('Error processing file:', error);
+            }
+        };
+
+        reader.readAsArrayBuffer(file);
+    }
+
+    function processExcelData(jsonData) {
+        // Assuming first row contains headers and first column contains dates/labels
+        const headers = jsonData[0].slice(1); // Remove first column header
+        const labels = jsonData.slice(1).map(row => row[0]); // Get labels from first column
+        
+        // Create datasets for each column
+        const datasets = headers.map((header, index) => {
+            const columnData = jsonData.slice(1).map(row => row[index + 1] || 0);
+            
+            return {
+                label: header,
+                data: columnData,
+                borderColor: index === 0 ? 'rgba(255, 157, 0, 1)' : 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: index === 0 ? 'rgba(255, 157, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)',
+                fill: true,
+                tension: 0.4
+            };
+        });
+
+        return {
+            labels: labels,
+            datasets: datasets
+        };
+    }
+
+    function createNewChart(data) {
+        const container = document.getElementById('dynamicGraphsContainer');
+        const canvasId = `dynamicGraph${++dynamicGraphCount}`;
+        const fileName = document.getElementById("excelFile").files[0].name;
+        
+        const canvasWrapper = document.createElement('div');
+        canvasWrapper.className = 'graph-container mb-4 position-relative';
+        canvasWrapper.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="m-0" style="color: var(--highlight);">${fileName}</h4>
+                <button class="btn btn-danger btn-sm" onclick="deleteGraph('${canvasId}')" title="Remove Graph">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <canvas id="${canvasId}"></canvas>
+        `;
+        container.appendChild(canvasWrapper);
+
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function sendMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value.trim();
+        
+        if (message) {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // Add user message
+            const userMessageElement = document.createElement('div');
+            userMessageElement.className = 'message user-message';
+            userMessageElement.textContent = message;
+            chatMessages.appendChild(userMessageElement);
+            
+            // Simulate AI response
+            setTimeout(() => {
+                const aiMessageElement = document.createElement('div');
+                aiMessageElement.className = 'message ai-message';
+                aiMessageElement.textContent = "This is a sample AI response to your message.";
+                chatMessages.appendChild(aiMessageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+            
+            messageInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }
+
+      function toggleGraph() {
+        const graphSection = document.getElementById('graphSection');
+        const toggleButton = graphSection.querySelector('.toggle-graph i');
+        
+        graphSection.classList.toggle('hidden');
+        toggleButton.classList.toggle('bi-eye-slash');
+        toggleButton.classList.toggle('bi-eye');
+      }
+
+      function toggleUpload() {
+        const uploadSection = document.getElementById('uploadSection');
+        const toggleButton = uploadSection.querySelector('.toggle-upload i');
+        const revealButton = document.querySelector('.reveal-upload');
+        
+        uploadSection.classList.toggle('hidden');
+        toggleButton.classList.toggle('bi-arrow-left-circle');
+        toggleButton.classList.toggle('bi-arrow-right-circle');
+        
+        // Toggle reveal button visibility and icon
+        if (uploadSection.classList.contains('hidden')) {
+            revealButton.classList.add('visible');
+            revealButton.querySelector('i').classList.remove('bi-cloud-upload');
+            revealButton.querySelector('i').classList.add('bi-folder-plus');
+        } else {
+            revealButton.classList.remove('visible');
+            revealButton.querySelector('i').classList.add('bi-cloud-upload');
+            revealButton.querySelector('i').classList.remove('bi-folder-plus');
+        }
+      }
+
+      function showPopup(title, message, type = 'info') {
+        const popup = document.getElementById('popup');
+        const popupTitle = popup.querySelector('.popup-title');
+        const popupContent = document.getElementById('popupContent');
+        
+        popup.className = 'popup-notification show ' + type;
+        popupTitle.textContent = title;
+        popupContent.textContent = message;
+        
+        if (type === 'success') {
+            setTimeout(() => {
+                closePopup();
+            }, 3000);
+        }
+      }
+
+      function closePopup() {
+        const popup = document.getElementById('popup');
+        popup.classList.remove('show');
+      }
+
+      function updateProgress(percent) {
+        const progressBar = document.getElementById('progressBar');
+        progressBar.style.width = `${percent}%`;
+      }
+
+      // Add resize observer for chat container
+      const chatContainer = document.getElementById('chatContainer');
+      const resizeObserver = new ResizeObserver(() => {
+          const chatMessages = document.getElementById('chatMessages');
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      });
+      resizeObserver.observe(chatContainer);
+
+    function deleteGraph(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        if (canvas) {
+            const chartInstance = Chart.getChart(canvasId);
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+            canvas.closest('.graph-container').remove();
+        }
+    }
+    </script>
+  </body>
+</html>

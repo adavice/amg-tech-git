@@ -170,6 +170,53 @@
             min-height: 120px;
             resize: vertical;
         }
+
+        /* Add popup styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            background: var(--main-color);
+            border: 2px solid var(--highlight);
+            border-radius: 10px;
+            padding: 20px 40px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .popup.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup i {
+            font-size: 48px;
+            color: var(--highlight);
+            margin-bottom: 15px;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -232,7 +279,55 @@
         </div>
     </main>
 
+    <!-- Add popup markup before closing body tag -->
+    <div class="popup-overlay"></div>
+    <div class="popup">
+        <i class="bi bi-check-circle"></i>
+        <h4>Thank You!</h4>
+        <p>Your sign up request has been submitted successfully.</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
+        $("#form2").on("submit", function () {
+            var formData = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+                company: $("#company").val(),
+                interested: $("#interested").val(),
+                message: $("#message").val(),
+            };
+            $("#form2").prop("disabled", true);
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: "send_form_signup" });
+            
+            $.ajax({
+                type: "POST",
+                url: "/c/contact_form",
+                data: formData,
+                encode: true,
+                success: function (data) {
+                    $('.popup, .popup-overlay').addClass('show');
+                    $("#form2")[0].reset();
+                    $("#form2").prop("disabled", false);
+                    
+                    setTimeout(function() {
+                        $('.popup, .popup-overlay').removeClass('show');
+                    }, 3000);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Something went wrong.");
+                    $("#form2").prop("disabled", false);
+                },
+            });
+            return false;
+        });
+
+        $('.popup-overlay').on('click', function() {
+            $('.popup, .popup-overlay').removeClass('show');
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Animate form elements
             gsap.from('.intro-text', {
