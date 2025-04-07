@@ -675,6 +675,9 @@
             <div class="analysis-container">
               <!-- Simplified Upload Section -->
               <div class="upload-section" id="uploadSection">
+                <button class="toggle-upload" onclick="toggleUpload()" title="Hide Upload Panel">
+                  <i class="bi bi-arrow-left-circle"></i>
+                </button>
                 <h3>Demo Data Analysis</h3>
                 <p class="text-white small mb-3">
                   Click the button below to analyze sample sales data from 2023.
@@ -684,8 +687,11 @@
                 </button>
               </div>
       
-              <!-- Graph Section remains the same -->
+              <!-- Graph Section -->
               <div class="graph-section" id="graphSection">
+                <div class="reveal-upload" onclick="toggleUpload()" title="Show Upload Panel">
+                  <i class="bi bi-cloud-upload"></i>
+                </div>
                 <div id="dynamicGraphsContainer"></div>
               </div>
             </div>
@@ -1138,14 +1144,6 @@
                             }]
                         }
                     });
-
-                    // Hide upload section after all graphs are created
-                    const uploadSection = document.getElementById('uploadSection');
-                    uploadSection.style.opacity = '0';
-                    setTimeout(() => {
-                        uploadSection.classList.add('hidden');
-                        document.getElementById('graphSection').style.flexBasis = '100%';
-                    }, 300);
 
                     updateProgress(100);
                     showPopup('Success', 'Multiple visualizations created!', 'success');
