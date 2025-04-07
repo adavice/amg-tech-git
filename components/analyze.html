@@ -673,43 +673,41 @@
             
             <!-- Analysis Section -->
             <div class="analysis-container">
-              <!-- Simplified Upload Section -->
-              <div class="upload-section" id="uploadSection">
-                <button class="toggle-upload" onclick="toggleUpload()" title="Hide Upload Panel">
-                  <i class="bi bi-arrow-left-circle"></i>
-                </button>
-                <h3>Demo Data Analysis</h3>
-                <p class="text-white small mb-3">
-                  Click the button below to analyze sample sales data from 2023.
-                </p>
-                <button class="btn btn-primary mt-3" onclick="analyzeDemoData()" title="Analyze Sample Data">
-                  Upload and Analyze
-                </button>
-              </div>
-      
-              <!-- Graph Section -->
-              <div class="graph-section" id="graphSection">
-                <div class="reveal-upload" onclick="toggleUpload()" title="Show Upload Panel">
-                  <i class="bi bi-cloud-upload"></i>
+                <!-- Upload Section -->
+                <div class="upload-section" id="uploadSection">
+                    <button class="toggle-upload" onclick="toggleUpload()" title="Hide Upload Panel">
+                        <i class="bi bi-arrow-left-circle"></i>
+                    </button>
+                    <h3>Demo Data Analysis</h3>
+                    <p class="text-white small mb-3">
+                        Click the button below to analyze sample sales data from 2023.
+                    </p>
+                    <button class="btn btn-primary mt-3" onclick="analyzeDemoData()" title="Analyze Sample Data">
+                        Upload and Analyze
+                    </button>
                 </div>
-                <div id="dynamicGraphsContainer"></div>
-              </div>
+
+                <!-- Graph Section -->
+                <div class="graph-section" id="graphSection">
+                    <div class="reveal-upload" onclick="toggleUpload()" title="Show Upload Panel">
+                        <i class="bi bi-cloud-upload"></i>
+                    </div>
+                    <div id="dynamicGraphsContainer"></div>
+                </div>
             </div>
-      
-          </div>
-      
-          <div class="popup-notification" id="popup">
+        </div>
+        <div class="popup-notification" id="popup">
             <div class="popup-header">
-              <h5 class="popup-title">Upload Status</h5>
-              <button class="popup-close" onclick="closePopup()">
-                <i class="bi bi-x-lg"></i>
-              </button>
+                <h5 class="popup-title">Upload Status</h5>
+                <button class="popup-close" onclick="closePopup()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
             </div>
             <div class="popup-content" id="popupContent"></div>
             <div class="progress-bar">
-              <div class="progress-bar-fill" id="progressBar"></div>
+                <div class="progress-bar-fill" id="progressBar"></div>
             </div>
-          </div>
+        </div>
     </section>
 
     <script>
@@ -725,18 +723,15 @@
             // Handle demo login
             demoLoginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
                 const logpass = document.getElementById('logpass').value;
                 const password = document.getElementById('password').value;
 
                 // Check credentials
                 if (logpass === '1234567890' && password === 'kb076') {
                     loginError.classList.add('d-none');
-                    
                     // Simulate login delay
                     setTimeout(() => {
                         loginSection.classList.add('hidden');
-                        
                         setTimeout(() => {
                             platformSection.classList.add('visible');
                             stepLogin.classList.remove('active');
@@ -773,7 +768,6 @@
         function togglePassword() {
             const passwordInput = document.getElementById('password');
             const toggleIcon = document.getElementById('passwordToggleIcon');
-            
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleIcon.className = 'bi bi-eye';
@@ -783,237 +777,219 @@
             }
         }
     </script>
-        <script>
-            let chart = null;
-            let dynamicGraphCount = 0;
-            let uploadedData = null;  // Will store the most recently processed data
-      
-          function uploadFile() {
-              const fileInput = document.getElementById("excelFile");
-              const file = fileInput.files[0];
-      
-              if (!file) {
-                  showPopup('Error', 'Please select a file first', 'error');
-                  return;
-              }
-      
-              // // Check if user is logged in
-              // const isLoggedIn = checkUserSession(); // You'll need to implement this based on your auth system
-              // if (!isLoggedIn) {
-              //     // Save current state if needed
-              //     sessionStorage.setItem('redirectAfterLogin', '/c/index?page=platform');
-              //     window.location.href = '/c/index?page=signup';
-              //     return;
-              // }
-      
-              const fileExt = file.name.split('.').pop().toLowerCase();
-              if (!['xlsx', 'xls'].includes(fileExt)) {
-                  showPopup('Error', 'Please upload only Excel files (.xlsx or .xls)', 'error');
-                  fileInput.value = '';
-                  return;
-              }
-      
-              showPopup('Processing', 'Reading Excel file...');
-              updateProgress(20);
-      
-              const reader = new FileReader();
-              reader.onload = function(e) {
-                  try {
-                      const data = new Uint8Array(e.target.result);
-                      const workbook = XLSX.read(data, { type: 'array' });
-                      updateProgress(50);
-      
-                      const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-                      const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
-                      
-                      if (jsonData.length < 2) {
-                          throw new Error('Excel file is empty or has insufficient data');
-                      }
-      
-                      updateProgress(80);
-                      const chartData = processExcelData(jsonData);
-                      createNewChart(chartData);
-                      
-                      updateProgress(100);
-                      showPopup('Success', 'Data visualization ready!', 'success');
-                      
-                      // Reset file input for next use
-                      fileInput.value = '';
-                      
-                  } catch (error) {
-                      showPopup('Error', error.message, 'error');
-                      console.error('Error processing file:', error);
-                  }
-              };
-      
-              reader.readAsArrayBuffer(file);
-          }
-      
-          function processExcelData(jsonData) {
-              // Extract headers excluding the first column (dates)
-              const headers = jsonData[0].slice(1);
-      
-              // Extract ONLY the first column value for each row for x-axis labels
-              const dates = jsonData.slice(1).map(row => {
-                  if (!row || !row.length) return '';
-                  // Take ONLY the first cell value from each row
-                  const firstCellValue = row[0];
-                  // Remove any trailing numbers or unwanted data, only keep the first value
-                  return String(firstCellValue).split(/[\s,]+/)[0];
-              }).filter(Boolean); // Remove any empty values
-      
-              // Create datasets for each numeric column
-              const datasets = headers.map((header, index) => {
-                  const columnData = jsonData.slice(1).map(row => row[index + 1] || 0);
-                  return {
-                      label: header,
-                      data: columnData,
-                      borderColor: index === 0 ? 'rgba(255, 157, 0, 1)' : 'rgba(255, 255, 255, 0.8)',
-                      backgroundColor: index === 0 ? 'rgba(255, 157, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)',
-                      fill: true,
-                      tension: 0.4
-                  };
-              });
-      
-              return {
-                  labels: dates,  // Only use first column values as labels
-                  datasets: datasets
-              };
-          }
-      
-          function createNewChart(data) {
-              const container = document.getElementById('dynamicGraphsContainer');
-              const canvasId = `dynamicGraph${++dynamicGraphCount}`;
-              const fileName = document.getElementById("excelFile").files[0].name;
-              
-              const canvasWrapper = document.createElement('div');
-              canvasWrapper.className = 'graph-container mb-4 position-relative';
-              canvasWrapper.innerHTML = `
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                      <h4 class="m-0" style="color: var(--highlight);">${fileName}</h4>
-                      <button class="btn btn-danger btn-sm" onclick="deleteGraph('${canvasId}')" title="Remove Graph">
-                          <i class="bi bi-x"></i>
-                      </button>
-                  </div>
-                  <canvas id="${canvasId}"></canvas>
-              `;
-              container.appendChild(canvasWrapper);
-      
-              const ctx = document.getElementById(canvasId).getContext('2d');
-              new Chart(ctx, {
-                  type: 'line',
-                  data: data,
-                  options: {
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                          legend: {
-                              labels: {
-                                  color: 'rgba(255, 255, 255, 0.8)'
-                              }
-                          }
-                      },
-                      scales: {
-                          y: {
-                              grid: {
-                                  color: 'rgba(255, 255, 255, 0.1)'
-                              },
-                              ticks: {
-                                  color: 'rgba(255, 255, 255, 0.8)'
-                              }
-                          },
-                          x: {
-                              grid: {
-                                  color: 'rgba(255, 255, 255, 0.1)'
-                              },
-                              ticks: {
-                                  color: 'rgba(255, 255, 255, 0.8)',
-                                  callback: function(value, index) {
-                                      // Only return the date labels
-                                      return data.labels[index];
-                                  }
-                              }
-                          }
-                      }
-                  }
-              });
-          }
-      
-          function toggleGraph() {
-              const graphSection = document.getElementById('graphSection');
-              const toggleButton = graphSection.querySelector('.toggle-graph i');
-              
-              graphSection.classList.toggle('hidden');
-              toggleButton.classList.toggle('bi-eye-slash');
-              toggleButton.classList.toggle('bi-eye');
-            }
-      
-            function toggleUpload() {
-              const uploadSection = document.getElementById('uploadSection');
-              const toggleButton = uploadSection.querySelector('.toggle-upload i');
-              const revealButton = document.querySelector('.reveal-upload');
-              
-              uploadSection.classList.toggle('hidden');
-              toggleButton.classList.toggle('bi-arrow-left-circle');
-              toggleButton.classList.toggle('bi-arrow-right-circle');
-              
-              // Toggle reveal button visibility and icon
-              if (uploadSection.classList.contains('hidden')) {
-                  revealButton.classList.add('visible');
-                  revealButton.querySelector('i').classList.remove('bi-cloud-upload');
-                  revealButton.querySelector('i').classList.add('bi-folder-plus');
-              } else {
-                  revealButton.classList.remove('visible');
-                  revealButton.querySelector('i').classList.add('bi-cloud-upload');
-                  revealButton.querySelector('i').classList.remove('bi-folder-plus');
-              }
-            }
-      
-            function showPopup(title, message, type = 'info') {
-              const popup = document.getElementById('popup');
-              const popupTitle = popup.querySelector('.popup-title');
-              const popupContent = document.getElementById('popupContent');
-              
-              popup.className = 'popup-notification show ' + type;
-              popupTitle.textContent = title;
-              popupContent.textContent = message;
-              
-              if (type === 'success') {
-                  setTimeout(() => {
-                      closePopup();
-                  }, 3000);
-              }
-            }
-      
-            function closePopup() {
-              const popup = document.getElementById('popup');
-              popup.classList.remove('show');
-            }
-      
-            function updateProgress(percent) {
-              const progressBar = document.getElementById('progressBar');
-              progressBar.style.width = `${percent}%`;
-            }
-      
-          function deleteGraph(canvasId) {
-              const canvas = document.getElementById(canvasId);
-              if (canvas) {
-                  const chartInstance = Chart.getChart(canvasId);
-                  if (chartInstance) {
-                      chartInstance.destroy();
-                  }
-                  canvas.closest('.graph-container').remove();
-              }
-          }
+    <script>
+        let chart = null;
+        let dynamicGraphCount = 0;
+        let uploadedData = null;  // Will store the most recently processed data
 
-          function analyzeDemoData() {
+        function uploadFile() {
+            const fileInput = document.getElementById("excelFile");
+            const file = fileInput.files[0];
+            if (!file) {
+                showPopup('Error', 'Please select a file first', 'error');
+                return;
+            }
+
+            const fileExt = file.name.split('.').pop().toLowerCase();
+            if (!['xlsx', 'xls'].includes(fileExt)) {
+                showPopup('Error', 'Please upload only Excel files (.xlsx or .xls)', 'error');
+                fileInput.value = '';
+                return;
+            }
+
+            showPopup('Processing', 'Reading Excel file...');
+            updateProgress(20);
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    updateProgress(50);
+
+                    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+                    if (jsonData.length < 2) {
+                        throw new Error('Excel file is empty or has insufficient data');
+                    }
+                    updateProgress(80);
+                    const chartData = processExcelData(jsonData);
+                    createNewChart(chartData);
+                    updateProgress(100);
+                    showPopup('Success', 'Data visualization ready!', 'success');
+                    // Reset file input for next use
+                    fileInput.value = '';
+                    
+                } catch (error) {
+                    showPopup('Error', error.message, 'error');
+                    console.error('Error processing file:', error);
+                }
+            };
+            
+            reader.readAsArrayBuffer(file);
+        }
+
+        function processExcelData(jsonData) {
+            // Extract headers excluding the first column (dates)
+            const headers = jsonData[0].slice(1);
+            // Extract ONLY the first column value for each row for x-axis labels
+            const dates = jsonData.slice(1).map(row => {
+                if (!row || !row.length) return '';
+                // Take ONLY the first cell value from each row
+                const firstCellValue = row[0];
+                // Remove any trailing numbers or unwanted data, only keep the first value
+                return String(firstCellValue).split(/[\s,]+/)[0];
+            }).filter(Boolean); // Remove any empty values
+
+            // Create datasets for each numeric column
+            const datasets = headers.map((header, index) => {
+                const columnData = jsonData.slice(1).map(row => row[index + 1] || 0);
+                return {
+                    label: header,
+                    data: columnData,
+                    borderColor: index === 0 ? 'rgba(255, 157, 0, 1)' : 'rgba(255, 255, 255, 0.8)',
+                    backgroundColor: index === 0 ? 'rgba(255, 157, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                };
+            });
+
+            return {
+                labels: dates,  // Only use first column values as labels
+                datasets: datasets
+            };
+        }
+
+        function createNewChart(data) {
+            const container = document.getElementById('dynamicGraphsContainer');
+            const canvasId = `dynamicGraph${++dynamicGraphCount}`;
+            const fileName = document.getElementById("excelFile").files[0].name;
+            
+            const canvasWrapper = document.createElement('div');
+            canvasWrapper.className = 'graph-container mb-4 position-relative';
+            canvasWrapper.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="m-0" style="color: var(--highlight);">${fileName}</h4>
+                    <button class="btn btn-danger btn-sm" onclick="deleteGraph('${canvasId}')" title="Remove Graph">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <canvas id="${canvasId}"></canvas>
+            `;
+            container.appendChild(canvasWrapper);
+
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                callback: function(value, index) {
+                                    // Only return the date labels
+                                    return data.labels[index];
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function toggleGraph() {
+            const graphSection = document.getElementById('graphSection');
+            const toggleButton = graphSection.querySelector('.toggle-graph i');
+            graphSection.classList.toggle('hidden');
+            toggleButton.classList.toggle('bi-eye-slash');
+            toggleButton.classList.toggle('bi-eye');
+        }
+
+        function toggleUpload() {
+            const uploadSection = document.getElementById('uploadSection');
+            const toggleButton = uploadSection.querySelector('.toggle-upload i');
+            const revealButton = document.querySelector('.reveal-upload');
+            
+            uploadSection.classList.toggle('hidden');
+            toggleButton.classList.toggle('bi-arrow-left-circle');
+            toggleButton.classList.toggle('bi-arrow-right-circle');
+            // Toggle reveal button visibility and icon
+            if (uploadSection.classList.contains('hidden')) {
+                revealButton.classList.add('visible');
+                revealButton.querySelector('i').classList.remove('bi-cloud-upload');
+                revealButton.querySelector('i').classList.add('bi-folder-plus');
+            } else {
+                revealButton.classList.remove('visible');
+                revealButton.querySelector('i').classList.add('bi-cloud-upload');
+                revealButton.querySelector('i').classList.remove('bi-folder-plus');
+            }
+        }
+
+        function showPopup(title, message, type = 'info') {
+            const popup = document.getElementById('popup');
+            const popupTitle = popup.querySelector('.popup-title');
+            const popupContent = document.getElementById('popupContent');
+            
+            popup.className = 'popup-notification show ' + type;
+            popupTitle.textContent = title;
+            popupContent.textContent = message;
+
+            if (type === 'success') {
+                setTimeout(() => {
+                    closePopup();
+                }, 3000);
+            }
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.classList.remove('show');
+        }
+
+        function updateProgress(percent) {
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = `${percent}%`;
+        }
+
+        function deleteGraph(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (canvas) {
+                const chartInstance = Chart.getChart(canvasId);
+                if (chartInstance) {
+                    chartInstance.destroy();
+                }
+                canvas.closest('.graph-container').remove();
+            }
+        }
+
+        function analyzeDemoData() {
             showPopup('Processing', 'Analyzing demo data...');
             updateProgress(20);
-        
+
             setTimeout(() => {
                 try {
                     updateProgress(50);
-                    
                     // Generate more realistic base data
                     const monthlyData = {
                         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -1147,11 +1123,10 @@
 
                     updateProgress(100);
                     showPopup('Success', 'Multiple visualizations created!', 'success');
-                    
+
                     // Update step indicator
                     document.getElementById('stepUpload').classList.remove('active');
                     document.getElementById('stepAnalyze').classList.add('active');
-                    
                 } catch (error) {
                     showPopup('Error', 'Error processing demo data', 'error');
                     console.error('Error:', error);
@@ -1162,7 +1137,7 @@
         function createNewChart({ title, type, data }) {
             const container = document.getElementById('dynamicGraphsContainer');
             const canvasId = `dynamicGraph${++dynamicGraphCount}`;
-            
+
             const canvasWrapper = document.createElement('div');
             canvasWrapper.className = 'graph-container mb-4 position-relative';
             canvasWrapper.innerHTML = `
@@ -1211,6 +1186,6 @@
                 }
             });
         }
-          </script>
+    </script>
 </body>
 </html>
